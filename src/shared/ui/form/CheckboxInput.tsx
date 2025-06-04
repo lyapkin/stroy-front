@@ -1,10 +1,10 @@
+import { DetailedHTMLProps, InputHTMLAttributes } from "react";
 import CheckboxIcon from "../icons/CheckboxIcon";
 import SelectedCheckboxIcon from "../icons/SelectedCheckboxIcon";
 import s from "./styles.module.css";
-import { InputFieldProps } from "./types";
 import cn from "classnames";
 
-const CheckboxInput = ({ label, className, ...rest }: InputFieldProps) => {
+const CheckboxInput = ({ label, className, ...rest }: CheckboxInputProps) => {
   return (
     <label
       className={cn(s.checkboxInput, className, {
@@ -18,5 +18,13 @@ const CheckboxInput = ({ label, className, ...rest }: InputFieldProps) => {
     </label>
   );
 };
+
+interface CheckboxInputProps
+  extends DetailedHTMLProps<
+    InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  > {
+  label: string;
+}
 
 export default CheckboxInput;

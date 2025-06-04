@@ -1,8 +1,6 @@
-import { discount, price } from "@/types";
-
 export const applyDiscountToPrice = (
-  price: price,
-  discount?: discount
+  price: number,
+  discount?: number
 ): number => {
   if (!discount) {
     return price;
