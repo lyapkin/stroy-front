@@ -6,7 +6,7 @@ const SocialLink = ({ url, fileName, alt }: SocialLinkProps) => {
   return (
     <Link href={url} style={{ display: "flex" }} target={"_blank"}>
       <Image
-        src={`/images/social/${fileName}.png`}
+        src={`/images/social/${fileName}.webp`}
         width={24}
         height={24}
         alt={alt}

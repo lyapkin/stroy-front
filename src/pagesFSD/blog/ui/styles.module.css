@@ -60,6 +60,6 @@
   }
 
   .blog__list > * {
-    width: auto;
+    width: auto !important;
   }
 }
