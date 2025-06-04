@@ -1,0 +1,60 @@
+.formSection {
+  background-image: url("/images/form/form.png");
+  background-position: right bottom;
+  background-size: auto 93%;
+  background-repeat: no-repeat;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 711px;
+}
+
+.form__subtitle {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  color: #000000;
+  width: 496px;
+  max-width: 100%;
+}
+
+@media only screen and (max-width: 1540px) {
+  .formSection {
+    background-position: right bottom 70px;
+    background-size: auto 35vw;
+  }
+}
+
+@media only screen and (max-width: 1240px) {
+  .formSection {
+    background-size: auto 430px;
+  }
+}
+
+@media only screen and (max-width: 1120px) {
+  .formSection {
+    background-size: auto 512px;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .formSection {
+    background-image: none;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .form {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .form__subtitle {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

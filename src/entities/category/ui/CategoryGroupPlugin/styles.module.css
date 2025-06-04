@@ -1,0 +1,129 @@
+.categoryGroup,
+.skeleton {
+  display: flex;
+  background-color: #fff;
+  border: 1px solid #dedede;
+}
+
+.categoryGroup__text {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0 32px 0;
+}
+
+.categoryGroup__title,
+.categoryGroup__list,
+.categoryGroup__link {
+  padding-left: 32px;
+}
+
+.categoryGroup__image,
+.skeleton__img {
+  position: relative;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.categoryGroup__title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.categoryGroup__list,
+.skeleton__list {
+  height: 138px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: hidden;
+}
+
+.categoryGroup__listItem {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  border-bottom: 1px solid #7b8990;
+  color: #7b8990;
+}
+
+.link {
+  width: 196px;
+  height: 48px;
+}
+
+.skeleton__line {
+  height: 24px;
+}
+
+.skeleton__list {
+  padding: 24px 32px;
+  flex-grow: 1;
+}
+
+.skeleton__img {
+  height: 300px;
+}
+
+@media (hover: hover) {
+  .categoryGroup__listItem:hover {
+    border-bottom: none;
+  }
+}
+
+@media only screen and (max-width: 1480px) {
+  .categoryGroup,
+  .skeleton {
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+  }
+  .categoryGroup__title {
+    height: 48px;
+  }
+  .categoryGroup__title,
+  .categoryGroup__list,
+  .categoryGroup__link {
+    padding: 0 32px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .categoryGroup__title {
+    font-size: 16px;
+  }
+
+  /* .categoryGroup__list {
+    height: 138px;
+  } */
+}
+
+@media only screen and (max-width: 580px) {
+  .categoryGroup,
+  .skeleton {
+    border: none;
+    position: relative;
+  }
+  .categoryGroup__title,
+  .categoryGroup__list,
+  .categoryGroup__link,
+  .skeleton__list {
+    padding: 0;
+  }
+
+  .categoryGroup__text,
+  .skeleton__list {
+    padding-top: 0;
+  }
+
+  .categoryGroup__link {
+    position: absolute;
+    bottom: -72px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

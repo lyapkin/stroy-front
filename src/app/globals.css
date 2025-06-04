@@ -1,0 +1,175 @@
+:root {
+  --main-color: #fb7215;
+}
+
+html,
+body {
+  /* height: 100%; */
+  max-width: 100%;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+html {
+  /* scrollbar-gutter: stable; */
+  /* overflow-x: hidden; */
+}
+
+body {
+  font-family: var(--main-font), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* scrollbar-gutter: stable; */
+  /* background-image: url("/images/bg-texture.jpg");
+  background-size: cover;
+  background-position: center top; */
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input,
+textarea,
+button {
+  border: none;
+  outline: none;
+  background: none;
+  width: 100%;
+  height: 100%;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  text-transform: inherit;
+  line-height: inherit;
+}
+
+button:disabled,
+input:disabled,
+textarea:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.container {
+  max-width: 1440px;
+  width: 90%;
+  margin: 0 auto;
+}
+.page {
+  /* padding-top: -120px; */
+  /* padding-bottom: 112px; */
+}
+.page-title {
+  font-weight: 600;
+  font-size: 36px;
+  color: #121212;
+}
+.section {
+  padding: 64px 0;
+}
+.section-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+.section-title {
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 50px;
+  text-transform: uppercase;
+  color: #000000;
+}
+.section-title b {
+  font-weight: 700;
+  display: inline-block;
+  width: 100%;
+}
+.hero {
+  padding-top: 240px;
+}
+
+@media only screen and (max-width: 900px) {
+  .section-flex {
+    gap: 32px;
+  }
+  .section-title {
+    font-size: 24px;
+    line-height: 40px;
+  }
+  .page-title {
+    font-size: 22px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  /* .section {
+    padding: 32px 0;
+  } */
+  .section-title {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+
+/* @media screen and (max-width: 1150px) {
+  .page {
+    padding-top: 120px;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .page {
+    padding-bottom: 56px;
+  }
+} */
+
+/* @media only screen and (max-width: 1480px) {
+  .container {
+    max-width: 1150px;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .container {
+    max-width: 1000px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    max-width: 718px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 526px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .container {
+    max-width: 90%;
+  }
+} */

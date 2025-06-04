@@ -1,0 +1,161 @@
+.inputField,
+.textareaField {
+  display: inline-block;
+  background-color: #fff;
+  border: 1px solid #dedede;
+  width: 100%;
+}
+
+.inputField:has(input[aria-invalid="true"]) {
+  border: 1px solid tomato;
+}
+
+.inputField input,
+.textareaField textarea {
+  padding: 20px 40px;
+}
+
+.inputField input:focus,
+.textareaField textarea:focus,
+.inputField input,
+.textareaField textarea {
+  color: #000;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.inputField input::placeholder,
+.textareaField textarea::placeholder,
+.fileField__label {
+  color: #818f9b;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+/* checkbox input */
+.checkboxInput {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.checkboxInput input {
+  display: inline-block;
+  width: 0;
+  height: 0;
+}
+
+.checkboxInput svg {
+  min-width: 17px;
+}
+
+.checkboxInput_disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* file input */
+.fileField input {
+  width: 0;
+  height: 0;
+  padding: 0;
+}
+
+.fileField {
+  padding: 0 40px;
+  /* box-sizing: content-box; */
+  height: 56px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.fileField__label {
+  flex-grow: 1;
+}
+
+.fileField__label_filled {
+  color: #000;
+}
+
+/* error */
+.error {
+  color: tomato;
+}
+
+/* submit button */
+.submitButton {
+  position: relative;
+}
+.submitButton_loading {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sent {
+  background-color: var(--main-color);
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+
+/* form submitted */
+.formSubmited {
+  color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  grid-column: 1 / -1;
+}
+
+.formSubmited__text {
+  color: #000;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.formSubmited__link {
+  margin-top: 32px;
+  width: 320px;
+  height: 80px;
+}
+
+@media only screen and (max-width: 900px) {
+  .formSubmited {
+    gap: 16px;
+  }
+
+  .formSubmited__text {
+    font-size: 18px;
+  }
+
+  .formSubmited__link {
+    margin-top: 16px;
+    width: 256px;
+    height: 48px;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .inputField input,
+  .textareaField textarea,
+  .fileField {
+    padding: 20px 24px;
+  }
+  .fileField input {
+    padding: 0;
+  }
+}

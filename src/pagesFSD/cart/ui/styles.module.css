@@ -1,0 +1,277 @@
+.cart {
+  display: grid;
+  grid-template-columns: 1fr 32%;
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas:
+    "title title"
+    "list form"
+    "sum form";
+  gap: 8px;
+  align-items: start;
+}
+
+.cart__title {
+  grid-area: title;
+  margin-bottom: 40px;
+}
+
+.cart__list {
+  grid-area: list;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cart__form {
+  grid-area: form;
+}
+
+.cart__sum {
+  grid-area: sum;
+}
+
+/* card */
+.card {
+  display: flex;
+  background-color: #f6f6f6;
+}
+
+.card__image {
+  grid-area: image;
+  position: relative;
+  height: 256px;
+  aspect-ratio: 296 / 256;
+}
+
+.card__rest {
+  flex-grow: 1;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr 160px;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "title price"
+    "characteristics action";
+  row-gap: 16px;
+  column-gap: 32px;
+}
+
+.card__title {
+  grid-area: title;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  height: 48px;
+  color: #1b1e21;
+  overflow: hidden;
+}
+
+.card__price {
+  grid-area: price;
+  align-self: baseline;
+  justify-self: end;
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.price__result {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.price__full {
+  font-weight: 500;
+  font-size: 14px;
+  color: #7b8990;
+}
+
+.card__characteristics {
+  grid-area: characteristics;
+}
+
+.card__action {
+  grid-area: action;
+  align-self: end;
+}
+
+/* characteristics */
+.characteristics {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 144px;
+  overflow: hidden;
+}
+
+.characteristics__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+.characteristics__item:after {
+  content: "";
+  flex-grow: 1;
+  order: 2;
+  border-bottom: 1px dotted #d4e2e7;
+}
+
+.characteristics__name {
+  font-weight: 400;
+  font-size: 14px;
+  color: #7b8991;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  order: 1;
+}
+
+.characteristics__value {
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  order: 3;
+}
+.characteristics__value_stock {
+  color: #40ac65;
+}
+
+/* empty */
+.emptyCart {
+  grid-column: 1 / -1;
+  grid-row: 2 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 64px 0;
+}
+
+.emptyCart__text {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: rgba(27, 30, 33, 1);
+}
+
+.emptyCart__link {
+  width: 320px;
+  height: 80px;
+}
+
+.productControl {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form {
+  background-color: #f6f6f6;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form__title {
+  font-weight: 400;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+/* loading */
+.cart__list_loading {
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media only screen and (max-width: 1360px) {
+  .cart {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "list"
+      "sum"
+      "form";
+    gap: 24px;
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+  .card__title {
+    font-size: 16px;
+    /* line-height: 24px;
+    height: 48px; */
+  }
+
+  .characteristics__value {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .card__rest {
+    grid-template-columns: 1fr 160px;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "title title"
+      "price action";
+  }
+
+  .card__characteristics {
+    display: none;
+  }
+  .card__image {
+    height: 224px;
+  }
+
+  .emptyCart {
+    gap: 16px;
+    padding: 24px 0;
+  }
+
+  .emptyCart__text {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .emptyCart__link {
+    width: 256px;
+    height: 48px;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .card__rest {
+    grid-template-columns: 1fr 140px;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "title title"
+      "price price"
+      ". action";
+  }
+
+  .card__characteristics {
+    display: none;
+  }
+  .card__image {
+    height: 256px;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .card {
+    flex-direction: column;
+  }
+  .form {
+    padding: 32px 24px;
+  }
+  .form__title {
+    font-size: 16px;
+  }
+}

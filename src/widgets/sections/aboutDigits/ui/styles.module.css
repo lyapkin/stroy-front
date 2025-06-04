@@ -1,0 +1,54 @@
+.about__bullets {
+  display: flex;
+  justify-content: space-between;
+}
+
+.aboutBullet {
+  border-left: 1px solid #fd9c2d;
+  padding: 0 24px;
+  width: 24%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  min-width: 340px;
+}
+
+.aboutBullet__title {
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+}
+
+.aboutBullet__digit {
+  display: block;
+  font-weight: 500;
+  font-size: 60px;
+}
+
+.aboutBullet__text {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 32px;
+  color: #000000;
+}
+
+@media only screen and (max-width: 1550px) {
+  .about__bullets {
+    flex-wrap: wrap;
+    row-gap: 40px;
+  }
+  .aboutBullet {
+    flex-basis: 50%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .aboutBullet {
+    flex-basis: 100%;
+    gap: 24px;
+  }
+
+  .aboutBullet__digit {
+    font-size: 32px;
+  }
+}

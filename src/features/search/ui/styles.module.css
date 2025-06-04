@@ -1,0 +1,29 @@
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search__input {
+  flex-grow: 1;
+  font-weight: 400;
+  font-size: 14px;
+  color: inherit;
+}
+
+.search__input::placeholder {
+  opacity: 0.8;
+  color: inherit;
+}
+
+.search__button {
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+}
+
+.search__button > * {
+  height: 60%;
+  color: inherit;
+}

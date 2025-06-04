@@ -1,0 +1,147 @@
+.heroSectionWrapper {
+  background-image: url("/images/home/hero/bg.jpg");
+  background-color: #011c23;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+.videoBg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.heroSection {
+  backdrop-filter: brightness(60%);
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  padding: 0 0 136px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 472px;
+}
+
+.hero__title {
+  font-weight: 600;
+  font-size: 46px;
+  line-height: 70px;
+  text-transform: uppercase;
+  color: #ffffff;
+  /* width: 762px; */
+}
+
+.hero__subtitle {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: #ffffff;
+  width: 550px;
+}
+
+.hero__caption {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 24px;
+  font-weight: 300;
+}
+
+.caption__decoration {
+  display: flex;
+  align-items: center;
+}
+
+.caption__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #fff;
+}
+
+.hero__cta {
+  display: flex;
+  gap: 24px;
+}
+
+.cta__button {
+  width: 360px;
+  height: 88px;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.getConsultationButton {
+  background-color: #fff;
+  color: #273039;
+  text-transform: uppercase;
+}
+@media (hover: hover) {
+  .getConsultationButton:hover {
+    opacity: 0.9;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .hero__text {
+    min-height: 396px;
+  }
+  .hero__title {
+    font-size: 32px;
+    line-height: 56px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero__cta {
+    flex-direction: column;
+  }
+  .cta__button {
+    width: 100%;
+  }
+  .cta__button {
+    height: 64px;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .hero {
+    padding-bottom: 96px;
+  }
+  .hero__text {
+    min-height: 352px;
+  }
+  .hero__title {
+    font-size: 18px;
+    line-height: 40px;
+  }
+  .hero__subtitle {
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .hero__caption {
+    align-items: baseline;
+  }
+
+  .hero__cta {
+    gap: 16px;
+  }
+}

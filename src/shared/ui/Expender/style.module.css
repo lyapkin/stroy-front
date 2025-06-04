@@ -1,0 +1,26 @@
+.expender__body {
+  overflow-y: hidden;
+}
+
+.expender_open .expender__body {
+  max-height: 5000px;
+  height: fit-content;
+  transition: max-height 0.3s ease-in;
+}
+
+.expender_close .expender__body {
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+}
+
+.expender__indicator {
+  transition: transform ease 0.3s;
+}
+
+.expender_open .expender__indicator {
+  transform: rotateZ(180deg);
+}
+
+.expender_close .expender__indicator {
+  transform: rotateZ(0deg);
+}

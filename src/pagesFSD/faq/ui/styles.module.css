@@ -1,0 +1,179 @@
+.faq {
+  display: grid;
+  grid-template-columns: auto 50%;
+  grid-template-rows: 56px auto;
+  grid-template-areas:
+    "title filters"
+    "questions questions";
+  row-gap: 40px;
+  column-gap: 8px;
+  align-items: center;
+}
+
+.faq__title {
+  white-space: nowrap;
+}
+
+.faq__filters {
+  grid-area: filters;
+  height: 100%;
+}
+
+.faq__questions {
+  grid-area: questions;
+  display: flex;
+  gap: 8px;
+}
+
+/* questions */
+.questions {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-self: start;
+}
+
+/* question item */
+.item {
+  border: 2px solid #dedede;
+  background-color: #fff;
+  overflow: hidden;
+  min-height: 96px;
+  display: flex;
+  flex-direction: column;
+}
+
+.item button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+}
+
+.item__title {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: rgba(39, 48, 57, 1);
+}
+
+.item__content {
+  padding: 0 40px;
+}
+
+/* ck content */
+
+.ckContent h2,
+.ckContetn h3,
+.ckContent p {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+  color: rgba(27, 30, 33, 1);
+}
+
+.ckContent h2,
+.ckContent h3 {
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.ckContent p,
+.ckContent li {
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 24px;
+  color: rgba(129, 143, 155, 1);
+}
+
+.ckContent ul {
+  list-style-type: "–\00a0\00a0";
+  list-style-position: inside;
+}
+
+.ckContent ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+.ckContent ul,
+.ckContent ol,
+.ckContent p {
+  margin-bottom: 24px;
+}
+
+@media screen and (max-width: 1480px) {
+  .faq__questions {
+    gap: 8px;
+  }
+
+  .item {
+    min-height: 74px;
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .faq__questions {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .faqSection {
+    padding: 96px 0 64px 0;
+  }
+
+  .faq {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 56px auto auto;
+    grid-template-areas:
+      "title"
+      "filters"
+      "questions";
+    gap: 24px;
+  }
+
+  .item button {
+    padding: 24px;
+  }
+  .item__title {
+    font-size: 16px;
+    gap: 24px;
+  }
+
+  .item__content {
+    padding: 0 24px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .faq {
+    grid-template-rows: 24px auto auto;
+    grid-template-areas:
+      "title"
+      "filters"
+      "questions";
+  }
+  .faq__title {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .item {
+    min-height: 48px;
+  }
+  .item__title {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .item__content {
+    padding: 0 16px;
+  }
+  .item button {
+    padding: 16px;
+  }
+}

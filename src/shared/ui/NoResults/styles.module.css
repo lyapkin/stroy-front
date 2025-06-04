@@ -1,0 +1,21 @@
+/* no result */
+.noresult {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 56px;
+  gap: 24px;
+  grid-column: 1 / -1;
+}
+
+.noresult__icon {
+  height: 56px;
+  width: 56px;
+  color: var(--main-color);
+}
+
+.noresult__text {
+  font-weight: 500;
+  font-size: 20px;
+  color: #1b1e21;
+}

@@ -1,0 +1,44 @@
+.commercialForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto 150px auto;
+  gap: 16px;
+}
+
+.commercialForm__full,
+.commercialForm__button {
+  grid-column: 1 / -1;
+}
+
+.commercialForm__button {
+  height: 96px;
+}
+
+.commercialForm__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media only screen and (max-width: 1240px) {
+  .commercialForm {
+    width: 56vw;
+  }
+}
+
+@media only screen and (max-width: 1120px) {
+  .commercialForm {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto 150px auto;
+    width: 40vw;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .commercialForm {
+    width: 100%;
+  }
+  .commercialForm__button {
+    height: 68px;
+  }
+}

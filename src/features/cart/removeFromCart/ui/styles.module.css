@@ -1,0 +1,11 @@
+.clear {
+  aspect-ratio: 3 / 1;
+  background-color: #fee9e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-transform: uppercase;
+  color: var(--main-color);
+  font-weight: 600;
+}

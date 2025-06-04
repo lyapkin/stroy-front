@@ -1,0 +1,26 @@
+.tel__icon,
+.email__icon {
+  color: var(--main-color);
+  display: flex;
+}
+
+.tel__text,
+.email__text {
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+.tel,
+.email {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+@media (hover: hover) {
+  .tel:hover,
+  .email:hover {
+    color: var(--main-color) !important;
+  }
+}

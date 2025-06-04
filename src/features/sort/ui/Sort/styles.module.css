@@ -1,0 +1,123 @@
+.sort {
+  position: relative;
+  width: 100%;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.sort__text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(123, 137, 144, 1);
+  display: flex;
+  align-items: center;
+}
+
+.sort__text > *:first-child {
+  display: none;
+}
+
+.sort__block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 100%;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: rgba(46, 50, 55, 1);
+  min-width: 144px;
+}
+
+.sort__button {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.sort__button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.sort__buttonIcon {
+  width: 8px;
+  display: flex;
+  align-items: center;
+  transform: rotate(0);
+  transition: transform ease-in-out 0.3s;
+}
+
+.sort__buttonIcon_open {
+  transform: rotate(180deg);
+}
+
+.sort__options {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  background-color: rgba(245, 246, 250, 1);
+  box-shadow: #dddddd 0px 15px 20px;
+  border-radius: 4px;
+  padding: 0 0;
+  max-height: 0;
+  transition: max-height ease 0.3s, padding ease 0.2s 0.1s;
+}
+
+.sort__options_open {
+  height: fit-content;
+  max-height: 400px;
+  padding: 8px 0;
+  transition: max-height ease 0.3s, padding ease 0.3s;
+}
+
+.sort__options input {
+  display: inline-block;
+  width: 0;
+  height: 0;
+}
+
+.sort__optionsItem {
+  width: 100%;
+  height: 100%;
+  text-align: end;
+}
+
+.sort__optionsItem label {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0 16px;
+  width: 100%;
+}
+
+@media (hover: hover) {
+  .sort__optionsItem label:hover {
+    background-color: var(--main-color);
+    color: #fff;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .sort__block {
+    font-size: 12px;
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: auto;
+  }
+  .sort__text > *:first-child {
+    display: initial;
+    width: 36px;
+    height: 24px;
+  }
+  .sort__text > *:last-child {
+    display: none;
+  }
+}

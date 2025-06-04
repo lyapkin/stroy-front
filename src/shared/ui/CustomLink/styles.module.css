@@ -1,0 +1,25 @@
+.link {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link__primary {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+.link__secondary {
+  background-color: #fff;
+  color: #273039;
+}
+
+@media (hover: hover) {
+  .link__primary:hover {
+    box-shadow: 0px -5px 7px 0px #ffffff33 inset;
+  }
+  .link__secondary:hover {
+    opacity: 0.9;
+  }
+}

@@ -1,0 +1,16 @@
+/* form */
+.cartForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cartForm > * {
+  width: 100%;
+}
+.cartForm__comment {
+  height: 116px;
+}
+.cartForm__button {
+  height: 64px;
+  margin-top: 64px;
+}

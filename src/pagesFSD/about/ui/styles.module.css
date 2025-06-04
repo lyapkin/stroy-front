@@ -1,0 +1,149 @@
+.aboutPage {
+  background-image: url("/images/bg-texture.jpg");
+  background-size: cover;
+  background-position: center 900px;
+}
+
+.aboutFirst {
+  display: flex;
+  gap: 56px;
+}
+
+.aboutFirst__title {
+  min-width: 588px;
+}
+
+.aboutFirst__text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
+  color: #1b1e21;
+}
+
+/* about company */
+
+.aboutCompany {
+  display: grid;
+  grid-template-columns: 560px 32px 1fr;
+  grid-template-areas:
+    "title . mission"
+    "bullets bullets bullets";
+  row-gap: 80px;
+  position: relative;
+}
+
+.aboutCompany__title {
+  grid-area: title;
+}
+
+.aboutCompany__mission {
+  grid-area: mission;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: rgba(27, 30, 33, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.aboutCompany__bullets {
+  grid-area: bullets;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* bullets */
+.bullets__title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: rgba(27, 30, 33, 1);
+}
+
+.bullets {
+  display: flex;
+  gap: 16px;
+}
+
+.item {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 28px;
+  background-color: #fff;
+  border-radius: 4px;
+  color: #1b1e21;
+  background: linear-gradient(249.33deg, #ffffff 4.4%, #f6f6f6 104.8%);
+  box-shadow: -85px 126px 61px rgba(166, 166, 166, 0.01),
+    -48px 71px 51px rgba(166, 166, 166, 0.05),
+    -21px 31px 38px rgba(166, 166, 166, 0.09),
+    -5px 8px 21px rgba(166, 166, 166, 0.1);
+}
+
+.item__icon {
+  height: 56px;
+  width: 64px;
+  color: var(--main-color);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.item__title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.item__text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+@media only screen and (max-width: 1360px) {
+  .aboutFirst {
+    flex-direction: column;
+  }
+  .aboutFirst__title {
+    min-width: auto;
+  }
+
+  .aboutCompany {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "mission"
+      "bullets";
+  }
+
+  .bullets {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .aboutPage {
+    background-position: center 830px;
+  }
+  .aboutFirst {
+    gap: 32px;
+  }
+
+  .aboutCompany {
+    row-gap: 32px;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .bullets {
+    grid-template-columns: 1fr;
+  }
+}

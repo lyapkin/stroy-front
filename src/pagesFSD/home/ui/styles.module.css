@@ -1,0 +1,11 @@
+.homePage {
+  background-image: url("/images/bg-texture.jpg");
+  background-size: cover;
+  background-position: center 900px;
+}
+
+@media only screen and (max-width: 900px) {
+  .homePage {
+    background-position: center 830px;
+  }
+}

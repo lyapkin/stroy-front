@@ -1,0 +1,25 @@
+.addToCart {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.addToCart svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 1;
+}
+
+@media only screen and (max-width: 900px) {
+  .addToCart {
+    gap: 0;
+    justify-content: space-around;
+  }
+}
