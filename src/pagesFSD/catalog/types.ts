@@ -10,3 +10,9 @@ export interface CatalogTitleProps {
   groupSlug?: string;
   categorySlug?: string;
 }
+
+export type Category = {
+  parents: Category[] | null;
+  slug: string;
+  name: string;
+};

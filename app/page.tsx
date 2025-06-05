@@ -1,7 +1,13 @@
 import { Home } from "@/src/pagesFSD";
+import Breadcrumbs from "@/src/widgets/breadcrumbs/Breadcrumbs";
 
 const HomePage = () => {
-  return <Home />;
+  return (
+    <>
+      <Breadcrumbs home />
+      <Home />
+    </>
+  );
 };
 
 export default HomePage;

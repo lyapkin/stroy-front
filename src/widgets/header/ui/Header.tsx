@@ -9,17 +9,17 @@ import { CartLink } from "@/src/entities/cart";
 import Catalog from "./Catalog";
 import PhoneNumber from "@/src/shared/ui/contacts/PhoneNumber";
 import Email from "@/src/shared/ui/contacts/Email";
-import HeaderTheme from "./HeaderTheme";
 import { Suspense } from "react";
 import { getContactsApi } from "@/src/entities/contacts/api";
 import MobileMenu from "./MobileMenu";
+import BlurTheme from "@/src/shared/ui/blurTheme/BlurTheme";
 
 const Header = async () => {
   const contacts = await getContactsApi();
   return (
     <header className={s.headerSection}>
       <div className="container">
-        <HeaderTheme>
+        <BlurTheme className={s.blur}>
           <div className={s.header}>
             <MobileMenu className={s.header__mobile} contacts={contacts} />
             <div className={s.header__mobileLogo}>
@@ -63,7 +63,7 @@ const Header = async () => {
               <CartLink />
             </div>
           </div>
-        </HeaderTheme>
+        </BlurTheme>
       </div>
     </header>
   );
