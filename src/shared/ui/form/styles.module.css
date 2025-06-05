@@ -57,9 +57,13 @@
 
 /* file input */
 .fileField input {
+  overflow: hidden;
+  display: inline-block;
   width: 0;
   height: 0;
   padding: 0;
+  position: absolute;
+  left: -10000px;
 }
 
 .fileField {
@@ -69,6 +73,7 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  position: relative;
 }
 
 .fileField__label {
