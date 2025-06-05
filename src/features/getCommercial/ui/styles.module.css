@@ -5,6 +5,10 @@
   gap: 16px;
 }
 
+.commercialForm > * {
+  min-width: 0;
+}
+
 .commercialForm__full,
 .commercialForm__button {
   grid-column: 1 / -1;
