@@ -7,14 +7,16 @@ import ArrowDownIcon from "@/src/shared/ui/icons/ArrowDownIcon";
 import { CategoryGroup } from "@/src/entities/category";
 import { useState } from "react";
 import cn from "classnames";
+import useWindowWidth from "@/src/shared/hooks/useWindowWidth";
 
 const CatalogContent = ({ data }: CatalogContentProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const width = useWindowWidth();
   return (
     <div
       className={s.catalogWrapper}
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
+      onMouseEnter={width && width > 900 ? () => setIsOpen(true) : undefined}
+      onMouseLeave={width && width > 900 ? () => setIsOpen(false) : undefined}
     >
       <Link
         href={"/catalog/"}
