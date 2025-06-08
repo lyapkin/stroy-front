@@ -3,6 +3,7 @@ import { helveticaNeue } from "@/src/app/fonts";
 import "@/src/app/globals.css";
 import { CartProvider, QueryProvider } from "@/src/app/providers";
 import { Header, Footer } from "@/src/widgets";
+import Contacts from "@/src/widgets/sections/contacts/ui/Contacts";
 // import Script from "next/script";
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export default async function RootLayout({
           <CartProvider>
             <Header />
             {children}
+            <Contacts />
             <Footer />
           </CartProvider>
         </QueryProvider>
