@@ -4,7 +4,6 @@ import "@/src/app/globals.css";
 import { CartProvider, QueryProvider } from "@/src/app/providers";
 import { Header, Footer } from "@/src/widgets";
 import Contacts from "@/src/widgets/sections/contacts/ui/Contacts";
-// import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Строительные технологии",
@@ -19,10 +18,6 @@ export default async function RootLayout({
   return (
     <html lang="ru">
       <body className={helveticaNeue.variable}>
-        {/* <Script
-          src="https://api-maps.yandex.ru/v3/?apikey=01e77374-c26f-49ab-9589-3e9c8349f150&lang=ru_RU"
-          strategy="beforeInteractive"
-        /> */}
         <QueryProvider>
           <CartProvider>
             <Header />
