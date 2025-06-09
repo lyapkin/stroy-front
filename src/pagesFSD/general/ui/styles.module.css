@@ -1,0 +1,9 @@
+.general__title {
+  margin-bottom: 56px;
+}
+
+@media screen and (max-width: 900px) {
+  .general__title {
+    margin-bottom: 24px;
+  }
+}

@@ -8,11 +8,11 @@ const Bottom = () => {
         <div className={s.bottom}>
           <p className={s.cr}>
             Все права защищены © 2025. при копировании обязательна ссылка на
-            сайт Stroy-tech.ru
+            сайт stroy-technology.ru
           </p>
           <div className={s.policy}>
-            <Link href={"#"}>Политика конфиденциальности</Link>
-            <Link href={"#"}>Пользовательское соглашение</Link>
+            <Link href={"/privacy/"}>Политика конфиденциальности</Link>
+            <Link href={"/agreement/"}>Пользовательское соглашение</Link>
           </div>
         </div>
       </div>

@@ -1,0 +1,100 @@
+.ck {
+  color: #1b1e21;
+}
+
+/* header */
+.ck h2,
+.ck h3 {
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 24px;
+  margin-top: 40px;
+}
+
+.ck h2 {
+  font-size: 32px;
+}
+
+.ck h3 {
+  font-size: 24px;
+}
+
+/* paragraph */
+.ck p,
+.ck li {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.ck ul {
+  list-style-type: "–\00a0\00a0";
+  list-style-position: inside;
+}
+
+.ck ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+.ck ul,
+.ck ol,
+.ck p,
+.ck .image {
+  margin-bottom: 24px;
+}
+
+/* image */
+.ck p:has(img) {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.ck figure {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+}
+.ck img {
+  max-width: 100%;
+  object-fit: contain;
+  height: auto;
+}
+
+.ck .image_resized {
+  margin: 0 auto 24px auto;
+}
+.ck .image_resized img,
+img.image_resized {
+  width: 100%;
+  height: auto;
+}
+
+/* .ck .image-style-align-right {
+  float: right;
+  margin-left: 8px;
+}
+.ck .image-style-align-left {
+  float: left;
+  margin-right: 8px;
+} */
+
+@media only screen and (max-width: 900px) {
+  .ck h2 {
+    font-size: 22px;
+  }
+
+  .ck h3 {
+    font-size: 18px;
+  }
+
+  .ck p,
+  .ck li {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

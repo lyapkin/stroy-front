@@ -55,7 +55,7 @@ const MobileMenu = ({ className, contacts }: MobileMenuProps) => {
             <NavItem link={"/about/"} className={s.mobileMenu__navItem}>
               О компании
             </NavItem>
-            <NavItem link={"#"} className={s.mobileMenu__navItem}>
+            <NavItem link={"/partners/"} className={s.mobileMenu__navItem}>
               Партнерам
             </NavItem>
             <NavItem link={"/blog/"} className={s.mobileMenu__navItem}>

@@ -8,20 +8,23 @@ const FooterNav = () => {
     <div className={s.footer__nav}>
       <FooterList title="Сайт">
         <Nav className={s.footer__list}>
-          <NavItem link={"#"} className={s.footer__listItem}>
-            Объекты
+          <NavItem link={"/catalog/"} className={s.footer__listItem}>
+            Каталог
           </NavItem>
-          <NavItem link={"#"} className={s.footer__listItem}>
+          <NavItem link={"/about/"} className={s.footer__listItem}>
             О компании
           </NavItem>
-          <NavItem link={"#"} className={s.footer__listItem}>
+          <NavItem link={"/partners/"} className={s.footer__listItem}>
             Партнерам
           </NavItem>
-          <NavItem link={"#"} className={s.footer__listItem}>
+          <NavItem link={"/blog/"} className={s.footer__listItem}>
             Новости
           </NavItem>
-          <NavItem link={"#"} className={s.footer__listItem}>
+          <NavItem link={"/contacts/"} className={s.footer__listItem}>
             Контакты
+          </NavItem>
+          <NavItem link={"/faq/"} className={s.footer__listItem}>
+            FAQ
           </NavItem>
         </Nav>
       </FooterList>

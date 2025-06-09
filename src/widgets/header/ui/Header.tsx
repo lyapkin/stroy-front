@@ -39,7 +39,7 @@ const Header = async () => {
                 <li className={s.header__logo}>
                   <Logo />
                 </li>
-                <NavItem link={"#"} className={s.header__navItem}>
+                <NavItem link={"/partners/"} className={s.header__navItem}>
                   Партнерам
                 </NavItem>
                 <NavItem link={"/blog/"} className={s.header__navItem}>
