@@ -14,3 +14,10 @@ const CartPage = () => {
 };
 
 export default CartPage;
+
+export const metadata = {
+  alternates: {
+    canonical: "cart/",
+  },
+  robots: { index: false, follow: true },
+};

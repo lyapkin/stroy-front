@@ -1,3 +1,5 @@
+import { Metadata } from "@/src/shared/types";
+
 type ProductImage = {
   id: number;
   url: string;
@@ -31,7 +33,7 @@ export type ProductDetail = {
   description: string;
   docs: ProductDoc[];
   remainder: number;
-  // seo: MetaSEO;
+  metadata: Metadata;
 } & ProductBase;
 
 export type ProductPreview = {

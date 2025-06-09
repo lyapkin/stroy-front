@@ -1,8 +1,9 @@
+import { getPageApi } from "@/src/shared/api";
 import { CatalogTitleProps } from "../types";
 import s from "./styles.module.css";
 import cn from "classnames";
 
-const CatalogTitle = ({
+const CatalogTitle = async ({
   groups,
   groupSlug,
   categorySlug,
@@ -26,7 +27,9 @@ const CatalogTitle = ({
     );
   }
 
-  return <h1 className={cn(s.catalog__title, "page-title")}>Каталог</h1>;
+  const page = await getPageApi("catalog");
+
+  return <h1 className={cn(s.catalog__title, "page-title")}>{page.title}</h1>;
 };
 
 export default CatalogTitle;

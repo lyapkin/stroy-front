@@ -1,4 +1,5 @@
 import { CategoryGroup } from "@/src/entities/category";
+import { Metadata } from "@/src/shared/types";
 
 export interface CatalogProps {
   groupSlug?: string;
@@ -12,7 +13,8 @@ export interface CatalogTitleProps {
 }
 
 export type Category = {
-  parents: Category[] | null;
+  parent: Category | null;
   slug: string;
   name: string;
+  metadata: Metadata | null;
 };

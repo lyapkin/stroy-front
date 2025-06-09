@@ -6,17 +6,17 @@ import { Suspense } from "react";
 import QuestionsListSkeleton from "./QuestionsListSkeleton";
 import { getFAQCategoriesApi } from "../api";
 import cn from "classnames";
+import { getPageApi } from "@/src/shared/api";
 
-const Faq = () => {
+const Faq = async () => {
+  const page = await getPageApi("faq");
   return (
     <>
       <div className="page hero">
         <div className="container">
           <main>
             <div className={s.faq}>
-              <h1 className={cn(s.faq__title, "page-title")}>
-                FAQ (Вопрос - ответ)
-              </h1>
+              <h1 className={cn(s.faq__title, "page-title")}>{page.title}</h1>
               <FilterBy
                 getFilterApi={getFAQCategoriesApi}
                 className={s.faq__filters}

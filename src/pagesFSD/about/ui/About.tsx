@@ -7,13 +7,15 @@ import AboutFirst from "./sections/aboutFirst/AboutFirst";
 import Remainder from "@/src/widgets/sections/remainder/ui/Remainder";
 import AboutDigits from "@/src/widgets/sections/aboutDigits/ui/AboutDigits";
 import AboutCompany from "./sections/aboutCompany/AboutCompany";
+import { getPageApi } from "@/src/shared/api";
 
-const About = () => {
+const About = async () => {
+  const page = await getPageApi("about");
   return (
     <div className={cn("page", s.aboutPage)}>
       <main>
         <Hero
-          title="О компании<br /> Строительные технологии"
+          title={page.title}
           subtitle={
             'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой"'
           }

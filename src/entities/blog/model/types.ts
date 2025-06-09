@@ -1,3 +1,5 @@
+import { Metadata } from "@/src/shared/types";
+
 export type BlogCategory = {
   id: number;
   name: string;
@@ -15,5 +17,5 @@ export type PostContent = {
   id: number;
   name: string;
   content: string;
-  // seo: MetaSEO | null;
+  metadata: Metadata | null;
 };

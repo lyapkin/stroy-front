@@ -5,11 +5,6 @@ import { CartProvider, QueryProvider } from "@/src/app/providers";
 import { Header, Footer } from "@/src/widgets";
 import Contacts from "@/src/widgets/sections/contacts/ui/Contacts";
 
-export const metadata: Metadata = {
-  title: "Строительные технологии",
-  description: "",
-};
-
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -30,3 +25,9 @@ export default async function RootLayout({
     </html>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Строительные технологии",
+  description: "",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL + "/"),
+};

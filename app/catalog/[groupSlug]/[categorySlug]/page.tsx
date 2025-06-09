@@ -1,7 +1,9 @@
+import { generateMetadataUtil } from "@/src/app/utils";
 import { Catalog } from "@/src/pagesFSD";
 import { getCategoryApi } from "@/src/pagesFSD/catalog/api";
 import Breadcrumbs from "@/src/widgets/breadcrumbs/Breadcrumbs";
 import BreadcrumbsItem from "@/src/widgets/breadcrumbs/BreadcrumbsItem";
+import { Metadata, ResolvingMetadata } from "next";
 
 const CatalogPage = async ({
   params,
@@ -10,7 +12,7 @@ const CatalogPage = async ({
 }) => {
   const { groupSlug, categorySlug } = await params;
   const category = await getCategoryApi("categories", categorySlug);
-  const group = category.parents?.find((item) => item.slug === groupSlug);
+  const group = category.parent;
   return (
     <>
       <Breadcrumbs>
@@ -28,3 +30,25 @@ const CatalogPage = async ({
 };
 
 export default CatalogPage;
+
+export const generateMetadata = async (
+  {
+    params,
+    searchParams,
+  }: {
+    params: Promise<{ groupSlug: string; categorySlug: string }>;
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+  },
+  parent: ResolvingMetadata
+): Promise<Metadata> => {
+  const { groupSlug, categorySlug } = await params;
+  const searchParamsData = await searchParams;
+  const category = await getCategoryApi("categories", categorySlug);
+
+  return generateMetadataUtil(
+    parent,
+    `catalog/${groupSlug}/${categorySlug}/`,
+    category.metadata,
+    searchParamsData
+  );
+};

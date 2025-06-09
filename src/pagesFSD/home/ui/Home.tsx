@@ -11,13 +11,15 @@ import Gallery from "@/src/widgets/sections/gallery/ui/Gallery";
 import Clients from "@/src/widgets/sections/clients/ui/Clients";
 import Certificates from "@/src/widgets/sections/certificates/ui/Certificates";
 import Production from "@/src/widgets/sections/production/ui/Production";
+import { getPageApi } from "@/src/shared/api";
 
-const Home = () => {
+const Home = async () => {
+  const page = await getPageApi("home");
   return (
     <div className={cn("page", s.homePage)}>
       <main>
         <Hero
-          title="Производство и поставка<br /> комплектующих для<br /> строительных объектов"
+          title={page.title}
           caption={"В любых объёмах с доставкой по всей России и СНГ"}
           video="/video/1"
         />
