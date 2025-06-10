@@ -23,7 +23,7 @@
 .header__mobileLogo {
   grid-area: logo;
   background-color: #e8f1f6;
-  padding: 8px 24px;
+  padding: 8px;
   display: none;
 }
 
@@ -130,7 +130,7 @@
   height: 120px;
   background-color: #e8f1f6;
   max-width: 230px;
-  padding: 16px 40px;
+  padding: 16px;
   flex-basis: 100%;
   z-index: 2;
 }
@@ -325,7 +325,7 @@
   }
   .header__logo {
     height: auto;
-    padding: 8px 24px;
+    padding: 8px;
   }
 }
 
