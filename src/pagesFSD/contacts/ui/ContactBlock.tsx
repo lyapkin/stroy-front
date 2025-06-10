@@ -26,9 +26,10 @@ const ContactBlock = ({ contact }: ContactBlockProps) => {
             </span>
           </div>
         </div>
-        <div className={s.block__phone}>
-          <span className={s.phone__title}>Телефон</span>
-          {/* {contact.phones.map((item) => {
+        {contact.phone && (
+          <div className={s.block__phone}>
+            <span className={s.phone__title}>Телефон</span>
+            {/* {contact.phones.map((item) => {
             return (
               <PhoneNumber
                 key={item.id}
@@ -37,8 +38,9 @@ const ContactBlock = ({ contact }: ContactBlockProps) => {
               />
             );
           })} */}
-          <PhoneNumber number={contact.phone} className={s.phone__tel} />
-        </div>
+            <PhoneNumber number={contact.phone} className={s.phone__tel} />
+          </div>
+        )}
       </div>
     </div>
   );

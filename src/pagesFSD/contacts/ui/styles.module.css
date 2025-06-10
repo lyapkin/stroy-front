@@ -41,6 +41,10 @@
   color: #1b1e21;
 }
 
+.contact__block {
+  border: 1px solid rgba(123, 137, 144, 0.5);
+}
+
 .block__location {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -51,7 +55,7 @@
   align-items: center;
   column-gap: 16px;
   padding: 20px;
-  border: 1px solid rgba(123, 137, 144, 0.5);
+  /* border: 1px solid rgba(123, 137, 144, 0.5); */
 }
 
 .location__icon {
@@ -77,8 +81,8 @@
   flex-direction: column;
   gap: 16px;
   padding: 20px;
-  border-right: 1px solid rgba(123, 137, 144, 0.5);
-  border-left: 1px solid rgba(123, 137, 144, 0.5);
+  border-top: 1px solid rgba(123, 137, 144, 0.5);
+  border-bottom: 1px solid rgba(123, 137, 144, 0.5);
 }
 
 .schedule__hours {
@@ -94,7 +98,7 @@
   flex-direction: column;
   gap: 16px;
   padding: 20px;
-  border: 1px solid rgba(123, 137, 144, 0.5);
+  /* border: 1px solid rgba(123, 137, 144, 0.5); */
 }
 
 .location__icon,

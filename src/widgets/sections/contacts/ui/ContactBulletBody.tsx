@@ -24,7 +24,9 @@ const ContactBulletBody = ({
           <span className={s.schedule__weekend}>Сб-Вс, {contact.weekends}</span>
         </div>
       </div>
-      <PhoneNumber number={contact.phone} className={s.contact__phone} />
+      {contact.phone && (
+        <PhoneNumber number={contact.phone} className={s.contact__phone} />
+      )}
     </div>
   );
 };

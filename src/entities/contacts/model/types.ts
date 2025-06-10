@@ -23,7 +23,7 @@ export type Address = {
   caption: string;
   weekdays: string;
   weekends: string;
-  phone: string;
+  phone?: string;
   coordinates?: [number, number];
 };
 
