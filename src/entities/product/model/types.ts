@@ -43,6 +43,7 @@ export type ProductPreview = {
 export type ProductRemainder = {
   id: ProductBase["id"];
   name: ProductBase["name"];
+  slug: ProductBase["slug"];
   remainder: number;
   image: ProductPreview["image"];
 };
