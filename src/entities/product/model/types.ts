@@ -32,7 +32,7 @@ export type ProductDetail = {
   // code: string;
   description: string;
   docs: ProductDoc[];
-  remainder: number;
+  remainder?: number;
   metadata: Metadata;
 } & ProductBase;
 
@@ -43,6 +43,6 @@ export type ProductPreview = {
 export type ProductRemainder = {
   id: ProductBase["id"];
   name: ProductBase["name"];
-  remainder: ProductDetail["remainder"];
+  remainder: number;
   image: ProductPreview["image"];
 };

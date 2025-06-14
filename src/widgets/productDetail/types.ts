@@ -12,7 +12,7 @@ export interface ProductDetailImagesProps {
 export interface ProductDetaillCharacteristicsProps {
   characteristics: ProductDetail["attributes"];
   stock: boolean;
-  remainder: number;
+  remainder: ProductDetail["remainder"];
 }
 
 export interface ProductDetailDescriptionProps {

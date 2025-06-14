@@ -30,10 +30,12 @@ const ProductDetaillCharacteristics = ({
             {stock ? "В наличии" : "Под заказ"}
           </span>
         </li>
-        <li className={s.characteristics__item}>
-          <span className={s.characteristics__name}>Актуальный остаток</span>
-          <span className={s.characteristics__value}>{remainder} шт</span>
-        </li>
+        {remainder && (
+          <li className={s.characteristics__item}>
+            <span className={s.characteristics__name}>Актуальный остаток</span>
+            <span className={s.characteristics__value}>{remainder} шт</span>
+          </li>
+        )}
         {content}
       </ul>
     </div>
