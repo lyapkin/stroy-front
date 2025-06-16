@@ -7,6 +7,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import getCookie from "@/src/shared/utils";
 import FieldError from "@/src/shared/ui/form/FieldError";
 import SubmitButton from "@/src/shared/ui/form/SubmitButton";
+import Agreement from "@/src/shared/ui/form/Agreement";
 
 const GetConsultation = ({ className }: GetConsultationProps) => {
   const {
@@ -89,6 +90,7 @@ const GetConsultation = ({ className }: GetConsultationProps) => {
       >
         Получит консультацию
       </SubmitButton>
+      <Agreement />
     </form>
   );
 };

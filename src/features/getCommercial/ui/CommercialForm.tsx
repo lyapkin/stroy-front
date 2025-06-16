@@ -9,6 +9,7 @@ import FieldError from "@/src/shared/ui/form/FieldError";
 import cn from "classnames";
 import getCookie from "@/src/shared/utils";
 import SubmitButton from "@/src/shared/ui/form/SubmitButton";
+import Agreement from "@/src/shared/ui/form/Agreement";
 
 const CommercialForm = () => {
   const {
@@ -101,6 +102,7 @@ const CommercialForm = () => {
       >
         Получить ком. пред
       </SubmitButton>
+      <Agreement />
     </form>
   );
 };

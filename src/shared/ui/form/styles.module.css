@@ -141,6 +141,17 @@
   height: 80px;
 }
 
+.agreement {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  color: #7b8990;
+  grid-column: 1 / -1;
+}
+.agreement a {
+  text-decoration: underline;
+}
+
 @media only screen and (max-width: 900px) {
   .formSubmited {
     gap: 16px;

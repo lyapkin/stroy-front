@@ -9,6 +9,7 @@ import InputField from "@/src/shared/ui/form/InputField";
 import getCookie from "@/src/shared/utils";
 import { useCart } from "@/src/app/providers/CartProvider/CartProvider";
 import useChangeSearchParams from "@/src/shared/hooks/useChangeSearchParams";
+import Agreement from "@/src/shared/ui/form/Agreement";
 
 const SendOrder = ({ className }: SendOrderProps) => {
   const { cart, setCart } = useCart();
@@ -106,6 +107,7 @@ const SendOrder = ({ className }: SendOrderProps) => {
       >
         Оформить заказ
       </SubmitButton>
+      <Agreement />
     </form>
   );
 };
