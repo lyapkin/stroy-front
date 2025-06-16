@@ -78,7 +78,7 @@ textarea:disabled {
 }
 .page {
   /* padding-top: -120px; */
-  /* padding-bottom: 112px; */
+  padding-bottom: 56px;
 }
 .page-title {
   font-weight: 600;
