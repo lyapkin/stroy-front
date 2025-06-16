@@ -1,0 +1,26 @@
+.cookieConsent {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  max-width: 720px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px -16px 40px 20px #1b1e2114;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 100;
+  border-radius: 8px;
+}
+
+.cookieConsent button {
+  width: 128px;
+  height: 48px;
+  align-self: flex-start;
+}
+
+.cookieConsent a {
+  color: var(--main-color);
+}

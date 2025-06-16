@@ -4,6 +4,7 @@ import "@/src/app/globals.css";
 import { CartProvider, QueryProvider } from "@/src/app/providers";
 import { Header, Footer } from "@/src/widgets";
 import Contacts from "@/src/widgets/sections/contacts/ui/Contacts";
+import CookieConsent from "@/src/widgets/cookieConsent/CookieConsent";
 
 export default async function RootLayout({
   children,
@@ -21,6 +22,7 @@ export default async function RootLayout({
             <Footer />
           </CartProvider>
         </QueryProvider>
+        <CookieConsent />
       </body>
     </html>
   );
