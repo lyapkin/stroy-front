@@ -22,7 +22,7 @@
 
 .header__mobileLogo {
   grid-area: logo;
-  background-color: #e8f1f6;
+  /* background-color: #e8f1f6; */
   padding: 8px;
   display: none;
 }
@@ -127,10 +127,10 @@
 }
 
 .header__logo {
-  height: 120px;
-  background-color: #e8f1f6;
+  height: 100%;
+  /* background-color: #e8f1f6; */
   max-width: 230px;
-  padding: 16px;
+  padding: 4px;
   flex-basis: 100%;
   z-index: 2;
 }
@@ -324,8 +324,8 @@
     padding: 0 24px;
   }
   .header__logo {
-    height: auto;
-    padding: 8px;
+    /* height: auto; */
+    /* padding: 8px; */
   }
 }
 
