@@ -13,7 +13,7 @@ const ProductCard = ({ product, action }: ProductCardProps) => {
       <div className={s.card__image}>
         <Link href={`/product/${product.slug}/`}>
           <Image
-            src={product.image}
+            src={product.image || "/images/noimage.jpg"}
             alt={product.name}
             fill
             style={{ objectFit: "cover" }}

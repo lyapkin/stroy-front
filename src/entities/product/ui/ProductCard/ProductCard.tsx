@@ -15,7 +15,7 @@ const ProductCard = ({ product, Action }: ProductCardProps) => {
         <Link href={`/product/${product.slug}/`}>
           <Discount discount={product.discount} />
           <Image
-            src={product.image}
+            src={product.image || "/images/noimage.jpg"}
             fill
             style={{ objectFit: "cover" }}
             alt={product.name}

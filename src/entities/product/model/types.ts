@@ -37,7 +37,7 @@ export type ProductDetail = {
 } & ProductBase;
 
 export type ProductPreview = {
-  image: string;
+  image?: string;
 } & ProductBase;
 
 export type ProductRemainder = {

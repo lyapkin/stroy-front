@@ -20,7 +20,7 @@ const RemainderContent = async () => {
           </p>
         </Link>
         <Image
-          src={item.image}
+          src={item.image || "/images/noimage.jpg"}
           fill
           alt={item.name}
           style={{ objectFit: "cover", zIndex: -1 }}

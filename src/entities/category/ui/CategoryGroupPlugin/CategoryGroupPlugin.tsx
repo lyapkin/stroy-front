@@ -33,7 +33,7 @@ const CategoryGroupPlugin = ({ categoryGroup }: CategoryGroupProps) => {
       </div>
       <div className={s.categoryGroup__image}>
         <Image
-          src={categoryGroup.image}
+          src={categoryGroup.image || "/images/noimage.jpg"}
           alt={categoryGroup.name}
           fill
           style={{ objectFit: "cover" }}

@@ -18,7 +18,14 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
         {product.name}
       </h1>
       <div className={s.productDetail__images}>
-        <ProductDetailImages images={product.images} alt={product.name} />
+        <ProductDetailImages
+          images={
+            product.images.length > 0
+              ? product.images
+              : [{ id: 0, url: "/images/noimage.jpg" }]
+          }
+          alt={product.name}
+        />
       </div>
       <div className={s.productDetail__characteristics}>
         <ProductDetaillCharacteristics

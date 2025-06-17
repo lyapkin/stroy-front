@@ -9,6 +9,6 @@ export type CategoryGroup = {
   id: number;
   name: string;
   slug: string;
-  image: string;
+  image?: string;
   categories: Category[];
 };
