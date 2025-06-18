@@ -41,14 +41,6 @@ const data = [
   "/images/home/clients/2.png",
   "/images/home/clients/3.png",
   "/images/home/clients/4.png",
-  "/images/home/clients/5.png",
-  "/images/home/clients/1.png",
-  "/images/home/clients/2.png",
-  "/images/home/clients/3.png",
-  "/images/home/clients/4.png",
-  "/images/home/clients/5.png",
-  "/images/home/clients/1.png",
-  "/images/home/clients/2.png",
 ];
 
 export default Clients;
