@@ -10,8 +10,7 @@ const Gallery = () => {
       <div className="container">
         <div className={cn(s.gallery, "section-flex")}>
           <h2 className={cn(s.gallery__title, "section-title")}>
-            Собственный цех строительных конструкций
-            <b>на територии завода ОМЗ</b>
+            Собственный <b>цех строительных конструкций</b>
           </h2>
           <FilterBy
             getFilterApi={getFilterApi}
