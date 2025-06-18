@@ -111,6 +111,10 @@
   line-height: 30px;
 }
 
+.productQualityContent__text li {
+  list-style-position: inside;
+}
+
 .productQualityContent__images {
   grid-area: images;
   min-width: 0;
