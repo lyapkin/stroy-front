@@ -9,6 +9,7 @@ import s from "./styles.module.css";
 import RemoveFromCart from "@/src/features/cart/removeFromCart/RemoveFromCart";
 import { useSearchParams } from "next/navigation";
 import FormSubmited from "@/src/shared/ui/form/FormSubmited";
+import { JSX } from "react";
 
 const CartList = ({ className }: CartListProps) => {
   const { data, isError, isPending } = useCartProducts();
@@ -31,24 +32,28 @@ const CartList = ({ className }: CartListProps) => {
     return <EmptyCart />;
   }
 
-  return (
-    <div className={cn(className)}>
-      {data.map((item) => {
-        return (
-          <ProductCard
-            key={item.id}
-            product={item}
-            action={
-              <div className={s.productControl}>
-                <ChangeCartQunatity itemId={item.id} />
-                <RemoveFromCart itemId={item.id} />
-              </div>
-            }
-          />
-        );
-      })}
-    </div>
-  );
+  const content: JSX.Element[] = [];
+  data.forEach((item) => {
+    item.prices.forEach((price) => {
+      content.push(
+        <ProductCard
+          key={price.id}
+          product={{
+            ...item,
+            price,
+          }}
+          action={
+            <div className={s.productControl}>
+              <ChangeCartQunatity itemId={price.id} />
+              <RemoveFromCart itemId={price.id} />
+            </div>
+          }
+        />
+      );
+    });
+  });
+
+  return <div className={cn(className)}>{content}</div>;
 };
 
 interface CartListProps {

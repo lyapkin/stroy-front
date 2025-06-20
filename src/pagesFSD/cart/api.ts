@@ -1,8 +1,11 @@
-import { ProductPreview } from "@/src/entities/product/model/types";
+import {
+  ProductCartResponse,
+  ProductPrice,
+} from "@/src/entities/product/model/types";
 
 export const getCartProductsApi = async (
-  ids: ProductPreview["id"][]
-): Promise<ProductPreview[]> => {
+  ids: ProductPrice["id"][]
+): Promise<ProductCartResponse[]> => {
   if (ids.length == 0) return [];
 
   const url = new URL("catalog/cart/", process.env.NEXT_PUBLIC_API_BASE_URL);

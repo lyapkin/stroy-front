@@ -4,12 +4,10 @@ import ProductDetailDocs from "./ProductDetailDocs";
 import ProductDetailImages from "./ProductDetailImages";
 import ProductDetaillCharacteristics from "./ProductDetaillCharacteristics";
 import s from "./styles.module.css";
-import ResultPrice from "@/src/shared/ui/price/ResultPrice";
-import FullPrice from "@/src/shared/ui/price/FullPrice";
-import AddToCart from "@/src/features/cart/addToCart/AddToCart";
 import cn from "classnames";
 import InfoPlugin from "./InfoPlugin";
 import GetConsultationPopup from "@/src/features/getConsultation/ui/GetConsultationPopup";
+import ProductPrice from "./ProductPrice";
 
 const ProductDetail = ({ product }: ProductDetailProps) => {
   return (
@@ -40,22 +38,7 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
       <div className={s.productDetail__docs}>
         <ProductDetailDocs docs={product.docs} />
       </div>
-      <div className={s.productDetail__price}>
-        <span className={s.price__title}>Стоимость</span>
-        <ResultPrice
-          className={s.price__result}
-          price={product.price}
-          discount={product.discount}
-        />
-        <FullPrice
-          className={s.price__full}
-          price={product.price}
-          discount={product.discount}
-        />
-      </div>
-      <div className={s.productDetail__action}>
-        <AddToCart itemId={product.id} />
-      </div>
+      <ProductPrice productPrice={product.prices} />
       <div className={s.productDetail__plugin}>
         {pluginData.map((item, i) => {
           return (

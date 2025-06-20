@@ -4,6 +4,7 @@ import DiscountSum from "./DiscountSum";
 import ResultSum from "./ResultSum";
 import s from "./styles.module.css";
 import cn from "classnames";
+import { ProductPrice } from "@/src/entities/product/model/types";
 
 const CartSum = ({ className }: CartSumProps) => {
   const { data, isError, isPending } = useCartProducts();
@@ -12,10 +13,15 @@ const CartSum = ({ className }: CartSumProps) => {
     return null;
   }
 
+  const prices = data.reduce(
+    (result, item) => [...result, ...item.prices],
+    [] as ProductPrice[]
+  );
+
   return (
     <div className={cn(s.sum, className)}>
-      <DiscountSum data={data} />
-      <ResultSum data={data} />
+      <DiscountSum data={prices} />
+      <ResultSum data={prices} />
     </div>
   );
 };

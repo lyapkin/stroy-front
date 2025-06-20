@@ -1,4 +1,4 @@
-import { ProductPreview } from "@/src/entities/product/model/types";
+import { ProductCart } from "@/src/entities/product/model/types";
 import s from "./styles.module.css";
 import Image from "next/image";
 import ResultPrice from "@/src/shared/ui/price/ResultPrice";
@@ -22,7 +22,7 @@ const ProductCard = ({ product, action }: ProductCardProps) => {
       </div>
       <div className={s.card__rest}>
         <p className={s.card__title}>
-          <Link href={`/product/${product.slug}/`}>{product.name}</Link>
+          <Link href={`/product/${product.slug}/`}>{product.name} </Link>
         </p>
         <Characteristics
           characteristics={product.attributes}
@@ -32,15 +32,16 @@ const ProductCard = ({ product, action }: ProductCardProps) => {
         <div className={s.card__price}>
           <ResultPrice
             className={s.price__result}
-            price={product.price}
-            discount={product.discount}
+            price={product.price.price}
+            discount={product.price.discount}
           />
           <FullPrice
             className={s.price__full}
-            price={product.price}
-            discount={product.discount}
+            price={product.price.price}
+            discount={product.price.discount}
           />
         </div>
+        <p className={s.card__variant}>{product.price.name}</p>
         <div className={s.card__action}>{action}</div>
       </div>
     </article>
@@ -48,7 +49,7 @@ const ProductCard = ({ product, action }: ProductCardProps) => {
 };
 
 interface ProductCardProps {
-  product: ProductPreview;
+  product: ProductCart;
   action: JSX.Element;
 }
 

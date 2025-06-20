@@ -1,12 +1,13 @@
 .productDetail {
   display: grid;
-  grid-template-columns: 676px 72px auto 168px 228px;
-  grid-template-rows: auto 1fr auto auto;
+  grid-template-columns: 676px auto 228px;
+  grid-template-rows: auto 562px auto auto auto;
   grid-template-areas:
-    "title title title title title"
-    "images characteristics characteristics characteristics plugin"
-    "images price price action plugin"
-    "description . docs docs docs";
+    "title title title"
+    "images control plugin"
+    "description characteristics characteristics"
+    "description docs docs"
+    "description . .";
   column-gap: 32px;
   row-gap: 56px;
 }
@@ -17,6 +18,22 @@
 
 .productDetail__images {
   grid-area: images;
+}
+
+.productDetail__control {
+  grid-area: control;
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+}
+.control__result {
+  display: flex;
+  justify-content: space-between;
+}
+
+.productDetail__pricelist {
+  flex-grow: 1;
+  overflow-y: hidden;
 }
 
 .productDetail__characteristics {
@@ -31,12 +48,7 @@
   grid-area: docs;
 }
 
-.productDetail__price {
-  grid-area: price;
-}
-
 .productDetail__action {
-  grid-area: action;
   width: 168px;
   height: 48px;
   align-self: end;
@@ -99,11 +111,101 @@
   cursor: default;
 }
 
+/* pricelist */
+.productDetail__pricelist {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.pricelist {
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.priceItem {
+  border-bottom: 1px solid #f6f6f6;
+}
+.priceItem:last-child {
+  border-bottom: none;
+}
+@media (hover: hover) {
+  .priceItem:hover {
+    background-color: #f6f6f6;
+  }
+}
+
+.priceItem_active {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+}
+
+.priceItem_active button {
+  background-color: var(--main-color);
+  color: #fff;
+  opacity: 0.8;
+}
+.priceItem_loading {
+  opacity: 0.5;
+}
+
+.priceItem button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 8px;
+}
+
+.priceItem svg {
+  width: auto;
+  height: 20px;
+  color: var(--main-color);
+}
+
+.priceItem_active button svg {
+  color: #fff;
+}
+
+.priceItem__name {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  gap: 8px;
+  height: 100%;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.priceItem__price {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+.priceItem__price > * {
+  line-height: 24px;
+}
+
+.priceItem__discount {
+  color: var(--main-color);
+}
+
+.priceItem__sum {
+  font-size: 20px;
+  font-weight: 500;
+}
+
 /* characteristics */
 .characteristics {
   display: flex;
   flex-direction: column;
   gap: 32px;
+}
+
+.characteristics__title {
+  border-bottom: 1px solid #d9d9d9;
+  padding-bottom: 8px;
 }
 
 .characteristics__list {
@@ -270,14 +372,14 @@
 
 @media only screen and (max-width: 1560px) {
   .productDetail {
-    grid-template-columns: 676px auto 168px;
-    grid-template-rows: auto 1fr auto auto auto;
+    grid-template-columns: 676px auto;
+    grid-template-rows: auto 562px auto auto auto auto;
     grid-template-areas:
-      "title title title"
-      "images characteristics characteristics"
-      "images price action"
-      "description docs docs"
-      "plugin . .";
+      "title title"
+      "images control"
+      "description characteristics"
+      "description docs"
+      "plugin docs";
   }
 
   .productDetail__plugin {
@@ -289,7 +391,8 @@
 
 @media only screen and (max-width: 1260px) {
   .productDetail {
-    grid-template-columns: 562px auto 168px;
+    grid-template-columns: 562px auto;
+    grid-template-rows: auto 448px auto auto auto auto;
   }
 
   .images__current {
@@ -307,15 +410,14 @@
 
 @media only screen and (max-width: 1120px) {
   .productDetail {
-    grid-template-columns: 448px auto 168px;
-    grid-template-rows: auto 1fr auto auto auto auto;
+    grid-template-columns: 448px auto;
     grid-template-areas:
-      "title title title"
-      "images characteristics characteristics"
-      "images price action"
-      "description description description"
-      "docs docs docs"
-      "plugin plugin .";
+      "title title"
+      "images control"
+      "characteristics characteristics"
+      "docs docs"
+      "description description"
+      "plugin plugin";
   }
 
   .images__all {
@@ -325,7 +427,8 @@
 
 @media only screen and (max-width: 1020px) {
   .productDetail {
-    grid-template-columns: 320px auto 168px;
+    grid-template-columns: 320px auto;
+    grid-template-rows: auto 320px auto auto auto auto;
   }
 
   .images__current {
@@ -349,12 +452,12 @@
 
 @media only screen and (max-width: 860px) {
   .productDetail {
-    grid-template-columns: auto 168px;
-    grid-template-rows: auto 1fr auto auto auto;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto 1fr auto auto auto auto;
     grid-template-areas:
       "title title"
       "images images"
-      "price action"
+      "control control"
       "characteristics characteristics"
       "plugin plugin"
       "description description"

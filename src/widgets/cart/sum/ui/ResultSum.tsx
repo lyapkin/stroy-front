@@ -1,4 +1,4 @@
-import { ProductPreview } from "@/src/entities/product/model/types";
+import { ProductPrice } from "@/src/entities/product/model/types";
 import s from "./styles.module.css";
 import { useCart } from "@/src/app/providers/CartProvider/CartProvider";
 import { applyDiscountToPrice } from "@/src/shared/ui/price/utils";
@@ -44,7 +44,7 @@ const ResultSum = ({ data }: ResultSumProps) => {
 };
 
 interface ResultSumProps {
-  data: ProductPreview[];
+  data: ProductPrice[];
 }
 
 export default ResultSum;

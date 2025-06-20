@@ -48,9 +48,10 @@
   padding: 24px;
   display: grid;
   grid-template-columns: 1fr 160px;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto 1fr;
   grid-template-areas:
     "title price"
+    "title variant"
     "characteristics action";
   row-gap: 16px;
   column-gap: 32px;
@@ -64,6 +65,10 @@
   height: 48px;
   color: #1b1e21;
   overflow: hidden;
+}
+.card__variant {
+  grid-area: variant;
+  min-width: 0;
 }
 
 .card__price {
@@ -217,10 +222,11 @@
 @media only screen and (max-width: 900px) {
   .card__rest {
     grid-template-columns: 1fr 160px;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto auto 1fr;
     grid-template-areas:
       "title title"
-      "price action";
+      "price action"
+      "variant action";
   }
 
   .card__characteristics {
@@ -251,9 +257,12 @@
     grid-template-columns: 1fr 140px;
     grid-template-rows: auto 1fr;
     grid-template-areas:
-      "title title"
-      "price price"
-      ". action";
+      "title title variant"
+      "price price price"
+      ". action action";
+  }
+  .card {
+    flex-direction: column;
   }
 
   .card__characteristics {
@@ -262,16 +271,28 @@
   .card__image {
     height: 256px;
   }
+  .card__rest {
+    column-gap: 16px;
+  }
 }
 
 @media only screen and (max-width: 660px) {
-  .card {
-    flex-direction: column;
-  }
   .form {
     padding: 32px 24px;
   }
   .form__title {
     font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .card__rest {
+    grid-template-columns: 1fr 140px;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+      "title title"
+      "variant vaiant"
+      "price price"
+      ". action";
   }
 }

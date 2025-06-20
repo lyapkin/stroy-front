@@ -25,10 +25,10 @@ const SendOrder = ({ className }: SendOrderProps) => {
   }
 
   const submitHandler: SubmitHandler<Form> = async (data) => {
-    const body: Form & { items: Record<"product" | "quantity", number>[] } = {
+    const body: Form & { items: Record<"variant" | "quantity", number>[] } = {
       ...data,
       items: Object.entries(cart).map((item) => ({
-        product: Number(item[0]),
+        variant: Number(item[0]),
         quantity: item[1],
       })),
     };

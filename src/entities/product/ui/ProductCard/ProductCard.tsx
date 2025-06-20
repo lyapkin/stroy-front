@@ -7,13 +7,14 @@ import Stock from "./Stock";
 import Characteristics from "./Characteristics";
 import { ProductPreview } from "../../model/types";
 import { FC } from "react";
+import CustomLink from "@/src/shared/ui/CustomLink/CustomLink";
 
 const ProductCard = ({ product, Action }: ProductCardProps) => {
   return (
     <article className={s.card}>
       <div className={s.card__image}>
         <Link href={`/product/${product.slug}/`}>
-          <Discount discount={product.discount} />
+          <Discount discount={product.price.discount} />
           <Image
             src={product.image || "/images/noimage.jpg"}
             fill
@@ -32,13 +33,22 @@ const ProductCard = ({ product, Action }: ProductCardProps) => {
       <div className={s.card__price}>
         <span className={s.price__title}>Стоимость</span>
         <ResultPrice
-          price={product.price}
-          discount={product.discount}
+          price={product.price.price}
+          discount={product.price.discount}
           className={s.price__value}
         />
       </div>
       <div className={s.card__action}>
-        <Action itemId={product.id} />
+        {product.price.single ? (
+          <Action itemId={product.price.id} />
+        ) : (
+          <CustomLink
+            href={`/product/${product.slug}/`}
+            style={{ width: "100%", height: "100%", fontSize: 13 }}
+          >
+            Посмотреть
+          </CustomLink>
+        )}
       </div>
     </article>
   );

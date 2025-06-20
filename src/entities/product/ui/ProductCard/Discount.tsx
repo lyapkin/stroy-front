@@ -1,4 +1,4 @@
-import { ProductPreview } from "../../model/types";
+import { ProductPrice } from "../../model/types";
 import s from "./styles.module.css";
 
 const Discount = ({ discount }: DiscountProps) => {
@@ -8,7 +8,7 @@ const Discount = ({ discount }: DiscountProps) => {
 };
 
 export interface DiscountProps {
-  discount?: ProductPreview["discount"];
+  discount?: ProductPrice["discount"];
 }
 
 export default Discount;

@@ -17,27 +17,43 @@ type ProductDoc = {
   url: string;
 };
 
+export type ProductPrice = {
+  id: number;
+  price: number;
+  discount?: number;
+  name: string;
+};
+
 export type ProductBase = {
   id: number;
   slug: string;
   name: string;
-  price: number;
-  discount?: number;
   stock: boolean;
   attributes: Characteristic[];
 };
 
 export type ProductDetail = {
   images: ProductImage[];
-  // code: string;
   description: string;
   docs: ProductDoc[];
   remainder?: number;
   metadata: Metadata;
+  prices: ProductPrice[];
 } & ProductBase;
 
 export type ProductPreview = {
   image?: string;
+  price: ProductPrice & { single: boolean };
+} & ProductBase;
+
+export type ProductCartResponse = {
+  image?: string;
+  prices: ProductPrice[];
+} & ProductBase;
+
+export type ProductCart = {
+  image?: string;
+  price: ProductPrice;
 } & ProductBase;
 
 export type ProductRemainder = {
