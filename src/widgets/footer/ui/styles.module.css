@@ -81,8 +81,21 @@
 
 .footer__emailItem,
 .footer__telItem,
-.footer__listItem {
-  padding: 0 40px;
+.footer__listItem,
+.footer__mainNumber,
+.footer__mainEmail,
+.footer__mainNumber,
+.footer__mainEmail {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.footer__mainNumber,
+.footer__mainEmail {
+  padding-bottom: 8px;
+  font-weight: 500;
+  font-size: 18px;
+  color: #1b1e21;
 }
 
 .footer__logo {
@@ -196,8 +209,11 @@
   .footer__title,
   .footer__emailItem,
   .footer__telItem,
-  .footer__listItem {
-    padding: 0 24px;
+  .footer__listItem,
+  .footer__mainNumber,
+  .footer__mainEmail {
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
@@ -281,16 +297,20 @@
   .footer__listBody,
   .footer__emailList,
   .footer__telList,
-  .footer__socialList {
+  .footer__socialList,
+  .footer__mainNumber,
+  .footer__mainEmail {
     transform: scaleX(0.89);
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
     width: 100%;
   }
 
   .footer__telItem,
   .footer__emailItem,
   .footer__listItem {
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
   .footer__social {
     padding: 16px 0;

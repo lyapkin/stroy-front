@@ -9,6 +9,7 @@ const FooterContacts = async () => {
   return (
     <div className={s.footer__contacts}>
       <p className={s.footer__title}>Контакты</p>
+      <PhoneNumber number={contacts.phone} className={s.footer__mainNumber} />
       <List
         className={s.footer__telList}
         data={contacts.phones}
