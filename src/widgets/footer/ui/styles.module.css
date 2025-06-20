@@ -28,6 +28,7 @@
 
 .footer__logo {
   grid-area: logo;
+  color: var(--logo);
 }
 
 .footer__about {

@@ -135,6 +135,15 @@
   z-index: 2;
 }
 
+.header__logo,
+.header__mobileLogo {
+  color: var(--logo);
+}
+.blur .header__logo,
+.blur .header__mobileLogo {
+  color: rgba(255, 255, 255, 0.8);
+}
+
 .header__social > * {
   display: flex;
   align-items: center;
