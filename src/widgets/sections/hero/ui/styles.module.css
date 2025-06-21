@@ -19,7 +19,7 @@
   object-position: center;
 }
 .heroSection {
-  backdrop-filter: brightness(60%);
+  /* backdrop-filter: brightness(60%); */
   background-color: transparent;
   position: relative;
   z-index: 1;

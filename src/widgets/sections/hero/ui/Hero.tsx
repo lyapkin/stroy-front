@@ -68,7 +68,7 @@ const Hero = ({ title, subtitle, caption, video }: HeroProps) => {
         </div>
       </div>
       <video autoPlay loop muted playsInline className={s.videoBg}>
-        {/* <source src={`${video}.webm`} type="video/webm" /> */}
+        <source src={`${video}.webm`} type="video/webm" />
         <source src={`${video}.mp4`} type="video/mp4" />
       </video>
     </section>
