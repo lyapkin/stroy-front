@@ -10,6 +10,18 @@ const Post = ({ post }: PostProps) => {
         <main>
           <div className={s.post}>
             <h1 className={cn(s.post__title, "page-title")}>{post.name}</h1>
+            {post.video && (
+              <div className={s.post__video}>
+                <iframe
+                  src={post.video}
+                  width={"100%"}
+                  height={"100%"}
+                  style={{ border: 0 }}
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            )}
             <div
               className={cn(s.post__content, s.ckContent, "ck")}
               dangerouslySetInnerHTML={{ __html: post.content }}

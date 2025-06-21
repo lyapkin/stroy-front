@@ -16,6 +16,7 @@ export type PostPreview = {
 export type PostContent = {
   id: number;
   name: string;
+  video?: string;
   content: string;
   metadata: Metadata | null;
 };

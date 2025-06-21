@@ -2,3 +2,15 @@
   /* text-transform: uppercase; */
   margin-bottom: 56px;
 }
+
+.post__video {
+  width: 100%;
+  height: 480px;
+}
+
+@media (max-width: 900px) {
+  .post__video {
+    height: auto;
+    aspect-ratio: 856 / 480;
+  }
+}
