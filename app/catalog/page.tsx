@@ -7,14 +7,11 @@ import BreadcrumbsItem from "@/src/widgets/breadcrumbs/BreadcrumbsItem";
 import { Metadata, ResolvingMetadata } from "next";
 
 const CatalogPage = async () => {
-  const [page] = await Promise.all([
-    getPageApi("catalog"),
-    getCategoryGroupsApi(),
-  ]);
+  const [] = await Promise.all([getPageApi("catalog"), getCategoryGroupsApi()]);
   return (
     <>
       <Breadcrumbs>
-        <BreadcrumbsItem>{page.title}</BreadcrumbsItem>
+        <BreadcrumbsItem>Каталог</BreadcrumbsItem>
       </Breadcrumbs>
       <Catalog />
     </>

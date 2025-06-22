@@ -6,11 +6,10 @@ import BreadcrumbsItem from "@/src/widgets/breadcrumbs/BreadcrumbsItem";
 import { Metadata, ResolvingMetadata } from "next";
 
 const AboutPage = async () => {
-  const page = await getPageApi("about");
   return (
     <>
       <Breadcrumbs>
-        <BreadcrumbsItem>{page.title}</BreadcrumbsItem>
+        <BreadcrumbsItem>О компании</BreadcrumbsItem>
       </Breadcrumbs>
       <About />
     </>

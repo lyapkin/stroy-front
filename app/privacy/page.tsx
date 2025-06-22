@@ -5,7 +5,6 @@ import BreadcrumbsItem from "@/src/widgets/breadcrumbs/BreadcrumbsItem";
 
 const Privacy = async () => {
   const policy = await getPolicyApi("privacy");
-  console.log(policy);
   return (
     <>
       <Breadcrumbs>

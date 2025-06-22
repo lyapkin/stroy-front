@@ -14,7 +14,7 @@ const Partners = async () => {
   return (
     <>
       <Breadcrumbs>
-        <BreadcrumbsItem>{page.title}</BreadcrumbsItem>
+        <BreadcrumbsItem>Партнерам</BreadcrumbsItem>
       </Breadcrumbs>
       <General general={{ name: page.title, content: content.content }} />
     </>
