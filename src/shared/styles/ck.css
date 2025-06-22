@@ -74,6 +74,34 @@ img.image_resized {
   height: auto;
 }
 
+/* nested list */
+.ck li p {
+  margin-bottom: 0;
+}
+.ck li > p:first-child {
+  display: inline;
+}
+.ck ol {
+  counter-reset: item;
+}
+
+.ck ol ol {
+  margin-bottom: 0;
+}
+
+.ck ol > li {
+  counter-increment: item;
+}
+
+.ck ol ol > li {
+  display: block;
+}
+
+.ck ol ol > li:before {
+  content: counters(item, ".") ". ";
+  /* margin-left: -20px; */
+}
+
 /* .ck .image-style-align-right {
   float: right;
   margin-left: 8px;
