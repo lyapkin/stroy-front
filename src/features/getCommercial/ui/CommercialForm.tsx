@@ -15,6 +15,7 @@ const CommercialForm = () => {
   const {
     register,
     handleSubmit,
+    setError,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<Form>({});
 
@@ -38,16 +39,46 @@ const CommercialForm = () => {
       body,
     });
 
+    if (res.status === 400) {
+      const error = await res.json();
+      if ("file" in error) {
+        setError("file", { message: error.file[0] });
+      }
+      if ("phone" in error) {
+        setError("phone", { message: error.phone[0] });
+      }
+      return;
+    }
+
     if (res.status !== 201) {
       const error = await res.json();
       console.log(error);
     }
   };
 
+  const validateFile = (fileList: FileList) => {
+    if (fileList.length === 0) {
+      return "Поле обязательно для заполнения";
+    }
+    const file = fileList[0];
+    if (file.size > 10 * 1024 * 1024) {
+      console.log(file.size);
+      return `Разме файла не должен превышать 10MB; Размер загружаемого файла ${(
+        file.size /
+        1024 /
+        1024
+      ).toFixed(1)}MB`;
+    }
+    const fileExtension = file.name.split(".").pop()?.toLowerCase();
+    if (fileExtension && fileExtension !== "pdf") {
+      return "Файл должен быть в формате pdf";
+    }
+
+    return true;
+  };
+
   return (
     <form className={s.commercialForm} onSubmit={handleSubmit(submitHandler)}>
-      {/* <InputField label="Марка, размер" name="charachteristc" />
-      <InputField label="Вид деятельности" name="activity" /> */}
       <div className={s.commercialForm__field}>
         <InputField
           placeholder="Введите имя"
@@ -82,10 +113,14 @@ const CommercialForm = () => {
       </div>
       <div className={cn(s.commercialForm__field, s.commercialForm__full)}>
         <FileField
-          {...register("file", { required: "Поле обязательно для заполнения" })}
+          {...register("file", {
+            required: "Поле обязательно для заполнения",
+            validate: validateFile,
+          })}
           placeholder="Прикрепите свой чертеж"
           name="file"
           aria-invalid={errors.file ? true : false}
+          accept="application/pdf"
         />
         {errors.file?.message && <FieldError message={errors.file.message} />}
       </div>
