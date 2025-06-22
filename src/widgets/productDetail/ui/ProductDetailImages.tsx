@@ -5,6 +5,7 @@ import s from "./styles.module.css";
 import Slider from "react-slick";
 import Image from "next/image";
 import cn from "classnames";
+import ProductPicture from "./ProductPicture";
 
 const ProductDetailImages = ({ images, alt }: ProductDetailImagesProps) => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -41,9 +42,7 @@ const ProductDetailImages = ({ images, alt }: ProductDetailImagesProps) => {
           }}
         >
           {images.map((item) => (
-            <div key={item.id} className={s.current__image}>
-              <Image src={item.url} fill alt={alt} objectFit="cover" />
-            </div>
+            <ProductPicture key={item.id} url={item.url} alt={alt} />
           ))}
         </Slider>
       </div>

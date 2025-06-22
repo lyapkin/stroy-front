@@ -81,6 +81,13 @@
   position: relative;
   height: 562px;
   aspect-ratio: 1 / 1;
+  cursor: pointer;
+}
+
+.current__popup {
+  width: 90vw;
+  height: 90vh;
+  position: relative;
 }
 
 .images__all {
@@ -447,6 +454,10 @@
 
   .title {
     font-size: 20px;
+  }
+
+  .current__popup {
+    width: 100vw;
   }
 }
 
