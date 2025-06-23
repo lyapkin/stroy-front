@@ -8,6 +8,7 @@ import ProductPagination from "@/src/widgets/catalog/ui/ProductPagination";
 import { Suspense } from "react";
 import { FormSection } from "@/src/widgets/form";
 import Filters from "@/src/widgets/catalogFilters/ui/Filters";
+import MobileCategories from "@/src/widgets/catalogFilters/ui/MobileCategories";
 
 const Catalog = async ({
   groupSlug,
@@ -49,6 +50,12 @@ const Catalog = async ({
               <Suspense>
                 <ProductPagination className={s.catalog__pagination} />
               </Suspense>
+              <MobileCategories
+                className={s.catalog__mobileCategories}
+                groups={categoryGroups}
+                groupSlug={groupSlug}
+                categorySlug={categorySlug}
+              />
             </div>
           </main>
         </div>

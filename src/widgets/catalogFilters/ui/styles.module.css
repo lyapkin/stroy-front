@@ -141,12 +141,33 @@
     background-color: #f7f7f7;
   }
 
+  .filters .filters__group,
+  .filters .filters__categories {
+    display: none;
+  }
+
+  .mobileCategories .filters__block {
+    border: 1px solid #f6f6f6;
+  }
+  .mobileCategories .filters__list {
+    padding-bottom: 8px;
+  }
+
   .clear {
     max-width: 360px;
     align-self: center;
   }
   .clear a {
     background-color: #f7f7f7;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .mobileCategories .filters__block button {
+    padding: 16px 24px;
+  }
+  .mobileCategories .filters__head {
+    font-size: 14px;
   }
 }
 

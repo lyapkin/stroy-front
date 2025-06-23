@@ -61,6 +61,10 @@
   justify-self: end;
 }
 
+.catalog__mobileCategories {
+  display: none;
+}
+
 @media only screen and (max-width: 1240px) {
   .catalog__list {
     grid-template-columns: repeat(2, 1fr);
@@ -71,12 +75,18 @@
   .catalog__list {
     grid-template-columns: repeat(3, 1fr);
   }
+  .catalog__mobileCategories {
+    display: initial;
+    grid-area: categories;
+    padding-bottom: 16px;
+  }
   .catalog {
     grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto auto auto 1fr;
+    grid-template-rows: auto auto auto auto auto 1fr;
     grid-template-areas:
       "title title"
       "search search"
+      "categories categories"
       "filters sort"
       "list list"
       "pagination pagination";

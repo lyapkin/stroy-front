@@ -10,13 +10,21 @@ import { CategoryGroup } from "@/src/entities/category";
 const CategoryGroupFilter = async ({
   groups,
   groupSlug,
+  head = false,
+  isOpen = true,
 }: CategoryGroupFilterProps) => {
   return (
     <Expender
-      // header={<span className={s.filters__head}>Комплектующие к опалубке</span>}
+      header={
+        head ? <span className={s.filters__head}>Категории</span> : undefined
+      }
       indicator={<ArrowDownIcon />}
-      isOpenDefault={true}
-      className={cn(s.filters__block, s.filters__block_headless)}
+      isOpenDefault={isOpen}
+      className={cn(
+        s.filters__block,
+        s.filters__block_headless,
+        s.filters__group
+      )}
     >
       <List
         className={s.filters__list}
@@ -38,6 +46,8 @@ const CategoryGroupFilter = async ({
 interface CategoryGroupFilterProps {
   groups: CategoryGroup[];
   groupSlug?: string;
+  head?: boolean;
+  isOpen?: boolean;
 }
 
 export default CategoryGroupFilter;
