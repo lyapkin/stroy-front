@@ -212,6 +212,8 @@
   position: absolute;
   left: 100%;
   top: 0;
+  bottom: 0;
+  right: -100%;
   display: none;
 }
 
