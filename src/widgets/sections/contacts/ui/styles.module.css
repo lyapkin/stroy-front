@@ -31,6 +31,7 @@
 .marker svg {
   width: 56px;
   height: 56px;
+  opacity: 0.8;
 }
 
 .bullets {

@@ -9,11 +9,13 @@ import {
 import s from "./styles.module.css";
 import MarkerIcon from "./MarkerIcon";
 import { Address } from "@/src/entities/contacts/model/types";
+import { useState } from "react";
 
 const Map = ({ currentContact, addresses, onClick }: MapProps) => {
   const currentCoordinates =
     currentContact &&
     addresses.find((item) => item.id === currentContact)?.coordinates;
+  const [intaractive, setIntaractive] = useState(false);
 
   const location = currentCoordinates
     ? {
@@ -26,7 +28,7 @@ const Map = ({ currentContact, addresses, onClick }: MapProps) => {
       };
 
   return (
-    <div className={s.map}>
+    <div className={s.map} onClick={() => setIntaractive(true)}>
       <YMapComponentsProvider
         apiKey={"01e77374-c26f-49ab-9589-3e9c8349f150"}
         lang="ru_RU"
@@ -34,7 +36,7 @@ const Map = ({ currentContact, addresses, onClick }: MapProps) => {
         <YMap
           location={location}
           mode="vector"
-          // behaviors={["drag"]}
+          behaviors={intaractive ? ["drag", "scrollZoom"] : []}
         >
           <YMapDefaultSchemeLayer
             customization={[
@@ -72,13 +74,20 @@ const Map = ({ currentContact, addresses, onClick }: MapProps) => {
                     "park",
                     "vegetation",
                     "region",
-                    "locality",
+                    // "locality",
                     "district",
                     "national_park",
                     "urban_area",
                   ],
                 },
                 stylers: { visibility: "off" },
+              },
+              {
+                tags: {
+                  any: ["locality"],
+                },
+                elements: "label.text.fill",
+                stylers: { scale: 1.7, zoom: [0, 10] },
               },
             ]}
           />
@@ -95,7 +104,7 @@ const Map = ({ currentContact, addresses, onClick }: MapProps) => {
               >
                 <div className={s.marker} onClick={() => onClick(item.id)}>
                   <MarkerIcon />
-                  <span className={s.marker__city}>{item.city}</span>
+                  {/* <span className={s.marker__city}>{item.city}</span> */}
                 </div>
               </YMapMarker>
             );
