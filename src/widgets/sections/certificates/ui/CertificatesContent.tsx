@@ -68,12 +68,11 @@ const CertificatesContent = () => {
 };
 
 const data = [
-  "/images/home/certificates/1.jpg",
-  "/images/home/certificates/2.jpg",
-  "/images/home/certificates/3.jpg",
-  "/images/home/certificates/4.jpg",
-  "/images/home/certificates/5.jpg",
-  "/images/home/certificates/6.jpg",
+  "/images/home/certificates/1.webp",
+  "/images/home/certificates/2.webp",
+  "/images/home/certificates/3.webp",
+  "/images/home/certificates/4.webp",
+  "/images/home/certificates/5.webp",
 ];
 
 export default CertificatesContent;
