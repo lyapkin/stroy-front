@@ -54,8 +54,8 @@ const Header = async () => {
               <SearchBar className={s.header__search} pathPrefix="/catalog/" />
             </Suspense>
             <div className={s.header__social}>
-              <TelegramLink />
-              <WhatsappLink />
+              <TelegramLink link={contacts.tg} />
+              <WhatsappLink link={contacts.wa} />
             </div>
             <Email email={contacts.email} className={s.header__email} />
             <PhoneNumber number={contacts.phone} className={s.header__tel} />

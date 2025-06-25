@@ -30,6 +30,8 @@ export type Address = {
 export type Contact = {
   email: string;
   phone: string;
+  tg?: string;
+  wa?: string;
   phones: AdditioanlContacts[];
   emails: AdditioanlContacts[];
   addresses: Address[];

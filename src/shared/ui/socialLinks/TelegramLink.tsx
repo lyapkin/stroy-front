@@ -1,7 +1,13 @@
 import SocialLink from "./SocialLink";
 
-const TelegramLink = () => {
-  return <SocialLink url={"#"} fileName="telegram" alt="Логотип телеграм" />;
+const TelegramLink = ({ link }: { link?: string }) => {
+  return (
+    <SocialLink
+      url={link ? `https://t.me/${link}` : "#"}
+      fileName="telegram"
+      alt="Логотип телеграм"
+    />
+  );
 };
 
 export default TelegramLink;

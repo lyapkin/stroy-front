@@ -1,7 +1,13 @@
 import SocialLink from "./SocialLink";
 
-const WhatsappLink = () => {
-  return <SocialLink url={"#"} fileName="whatsapp" alt="Логотип вотсап" />;
+const WhatsappLink = ({ link }: { link?: string }) => {
+  return (
+    <SocialLink
+      url={link ? `https://wa.me/${link}` : "#"}
+      fileName="whatsapp"
+      alt="Логотип вотсап"
+    />
+  );
 };
 
 export default WhatsappLink;
