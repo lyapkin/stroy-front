@@ -40,7 +40,10 @@ const AboutCompany = () => {
             </p>
           </div>
           <div className={s.aboutCompany__bullets}>
-            <p className={s.bullets__title}>Ценености компании</p>
+            <p className={s.bullets__title}>
+              Компетенции Строительных техноголий — это, качественный сервис,
+              производство, логистика и сопровождение проекта
+            </p>
             <Bullets />
           </div>
         </div>

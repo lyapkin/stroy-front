@@ -12,6 +12,10 @@
   gap: 40px;
   min-width: 340px;
 }
+.aboutBullet sup {
+  vertical-align: top;
+  font-size: 0.6em;
+}
 
 .aboutBullet__title {
   font-weight: 400;

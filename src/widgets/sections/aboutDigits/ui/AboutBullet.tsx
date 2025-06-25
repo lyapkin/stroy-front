@@ -4,10 +4,16 @@ const AboutBullet = ({ digit, sub, text }: AboutBulletProps) => {
   return (
     <div className={s.aboutBullet}>
       <h3 className={s.aboutBullet__title}>
-        <span className={s.aboutBullet__digit}>{digit}</span>
+        <span
+          className={s.aboutBullet__digit}
+          dangerouslySetInnerHTML={{ __html: digit }}
+        />
         {sub}
       </h3>
-      <p className={s.aboutBullet__text}>{text}</p>
+      <p
+        className={s.aboutBullet__text}
+        dangerouslySetInnerHTML={{ __html: text }}
+      />
     </div>
   );
 };

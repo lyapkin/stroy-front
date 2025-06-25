@@ -16,7 +16,7 @@ export interface BulletsItemProps {
     id: number;
     title: string;
     text: string;
-    icon: JSX.Element;
+    icon: JSX.Element | null;
   };
 }
 

@@ -1,9 +1,9 @@
 import s from "../../styles.module.css";
 import Item from "./Item";
-import TeamIcon from "./icons/TeamIcon";
-import ShieldIcon from "./icons/ShieldIcon";
-import HandshakeIcon from "./icons/HandshakeIcon";
-import MountainsIcon from "./icons/MountainsIcon";
+// import TeamIcon from "./icons/TeamIcon";
+// import ShieldIcon from "./icons/ShieldIcon";
+// import HandshakeIcon from "./icons/HandshakeIcon";
+// import MountainsIcon from "./icons/MountainsIcon";
 
 const Bullets = () => {
   const content = data.map((item) => {
@@ -15,27 +15,31 @@ const Bullets = () => {
 const data = [
   {
     id: 1,
-    title: "Команда",
-    text: 'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой"',
-    icon: <TeamIcon />,
+    title: "Профессиональное консультарование",
+    text: "Мы предоставляем консультации по выбору опалубочных систем, а также услуги по проектированию и расчету необходимых материалов",
+    // icon: <TeamIcon />,
+    icon: null,
   },
   {
     id: 2,
-    title: "Гарантии",
-    text: 'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой"',
-    icon: <ShieldIcon />,
+    title: "Вся опалубка в наличии",
+    text: "У нас на складах имеется более продукции, постоянно обновляемый складской остаток",
+    // icon: <ShieldIcon />,
+    icon: null,
   },
   {
     id: 3,
-    title: "Поддержка",
-    text: 'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой"',
-    icon: <HandshakeIcon />,
+    title: "Доставка по России",
+    text: "Осуществляем доставку по всем регионам РФ и странам СНГ. Благодаря собственному автопарку предоставляем выгодные условия.",
+    // icon: <HandshakeIcon />,
+    icon: null,
   },
   {
     id: 4,
-    title: "Задачи",
-    text: 'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой"',
-    icon: <MountainsIcon />,
+    title: "Удобные варианты приобретения",
+    text: "Подбираем наиболее выгодное решение для каждого клиента",
+    // icon: <MountainsIcon />,
+    icon: null,
   },
 ];
 

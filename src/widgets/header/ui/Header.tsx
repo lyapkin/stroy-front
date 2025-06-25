@@ -30,20 +30,20 @@ const Header = async () => {
                 <li className={s.header__catalog}>
                   <Catalog />
                 </li>
-                <NavItem link={"/faq/"} className={s.header__navItem}>
-                  FAQ
-                </NavItem>
                 <NavItem link={"/about/"} className={s.header__navItem}>
                   О компании
+                </NavItem>
+                <NavItem link={"/partners/"} className={s.header__navItem}>
+                  Партнерам
                 </NavItem>
                 <li className={s.header__logo}>
                   <Logo />
                 </li>
-                <NavItem link={"/partners/"} className={s.header__navItem}>
-                  Партнерам
-                </NavItem>
                 <NavItem link={"/blog/"} className={s.header__navItem}>
                   Новости
+                </NavItem>
+                <NavItem link={"/faq/"} className={s.header__navItem}>
+                  FAQ
                 </NavItem>
                 <NavItem link={"/contacts/"} className={s.header__navItem}>
                   Контакты
