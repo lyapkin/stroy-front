@@ -17,7 +17,7 @@
   grid-area: image;
   position: relative;
   width: 100%;
-  aspect-ratio: 368 / 232;
+  aspect-ratio: 1 / 1;
 }
 
 .card__discount {
