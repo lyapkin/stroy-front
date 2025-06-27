@@ -14,9 +14,14 @@ const Hero = ({ title, subtitle, caption, video }: HeroProps) => {
                 className={s.hero__title}
                 dangerouslySetInnerHTML={{ __html: title }}
               ></h1>
-              {subtitle && <p className={s.hero__subtitle}>{subtitle}</p>}
+              {subtitle && (
+                <div
+                  className={s.hero__subtitle}
+                  dangerouslySetInnerHTML={{ __html: subtitle }}
+                />
+              )}
               <div className={s.hero__caption}>
-                <span className={s.caption__decoration}>
+                {/* <span className={s.caption__decoration}>
                   <svg
                     width="40"
                     height="8"
@@ -48,7 +53,7 @@ const Hero = ({ title, subtitle, caption, video }: HeroProps) => {
                       strokeWidth="2"
                     />
                   </svg>
-                </span>
+                </span> */}
                 <p className={s.caption__text}>{caption}</p>
               </div>
             </div>
