@@ -5,12 +5,30 @@ import BreadcrumbsItem from "@/src/widgets/breadcrumbs/BreadcrumbsItem";
 
 const Privacy = async () => {
   const policy = await getPolicyApi("privacy");
+
+  const jsonLdBreadcrumbs = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Политика конфиденциальности",
+        item: `${process.env.SITE_URL}/privacy/`,
+      },
+    ],
+  };
+
   return (
     <>
       <Breadcrumbs>
         <BreadcrumbsItem>Политика конфиденциальности</BreadcrumbsItem>
       </Breadcrumbs>
       <General general={policy} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumbs) }}
+      />
     </>
   );
 };

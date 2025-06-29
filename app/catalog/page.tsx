@@ -8,12 +8,28 @@ import { Metadata, ResolvingMetadata } from "next";
 
 const CatalogPage = async () => {
   const [] = await Promise.all([getPageApi("catalog"), getCategoryGroupsApi()]);
+  const jsonLdBreadcrumbs = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Каталог",
+        item: `${process.env.SITE_URL}/catalog/`,
+      },
+    ],
+  };
   return (
     <>
       <Breadcrumbs>
         <BreadcrumbsItem>Каталог</BreadcrumbsItem>
       </Breadcrumbs>
       <Catalog />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumbs) }}
+      />
     </>
   );
 };

@@ -5,12 +5,28 @@ import BreadcrumbsItem from "@/src/widgets/breadcrumbs/BreadcrumbsItem";
 
 const Agreement = async () => {
   const policy = await getPolicyApi("agreement");
+  const jsonLdBreadcrumbs = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Пользовательское соглашение",
+        item: `${process.env.SITE_URL}/agreement/`,
+      },
+    ],
+  };
   return (
     <>
       <Breadcrumbs>
         <BreadcrumbsItem>Пользовательское соглашение</BreadcrumbsItem>
       </Breadcrumbs>
       <General general={policy} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumbs) }}
+      />
     </>
   );
 };

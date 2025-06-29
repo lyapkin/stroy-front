@@ -11,12 +11,28 @@ const Partners = async () => {
     getPageApi("partners"),
     getGeneralContentApi("partners"),
   ]);
+  const jsonLdBreadcrumbs = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Партнерам",
+        item: `${process.env.SITE_URL}/partners/`,
+      },
+    ],
+  };
   return (
     <>
       <Breadcrumbs>
         <BreadcrumbsItem>Партнерам</BreadcrumbsItem>
       </Breadcrumbs>
       <General general={{ name: page.title, content: content.content }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumbs) }}
+      />
     </>
   );
 };

@@ -6,12 +6,28 @@ import BreadcrumbsItem from "@/src/widgets/breadcrumbs/BreadcrumbsItem";
 import { Metadata, ResolvingMetadata } from "next";
 
 const AboutPage = async () => {
+  const jsonLdBreadcrumbs = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "О компании",
+        item: `${process.env.SITE_URL}/about/`,
+      },
+    ],
+  };
   return (
     <>
       <Breadcrumbs>
         <BreadcrumbsItem>О компании</BreadcrumbsItem>
       </Breadcrumbs>
       <About />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumbs) }}
+      />
     </>
   );
 };
