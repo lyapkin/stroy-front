@@ -1,5 +1,5 @@
 import { FormSection } from "@/src/widgets/form";
-import { BlogPlugin } from "@/src/widgets/blogPlugin";
+// import { BlogPlugin } from "@/src/widgets/blogPlugin";
 import cn from "classnames";
 import s from "./styles.module.css";
 import Hero from "@/src/widgets/sections/hero/ui/Hero";
@@ -33,7 +33,7 @@ const Home = async () => {
         <Clients />
       </main>
       <FormSection />
-      <BlogPlugin />
+      {/* <BlogPlugin /> */}
     </div>
   );
 };

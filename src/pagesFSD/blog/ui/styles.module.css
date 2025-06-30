@@ -16,6 +16,7 @@
 
 .blog__filters {
   grid-area: filters;
+  min-width: 0;
 }
 
 .blog__list {
