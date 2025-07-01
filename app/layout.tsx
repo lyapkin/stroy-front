@@ -5,6 +5,7 @@ import { CartProvider, QueryProvider } from "@/src/app/providers";
 import { Header, Footer } from "@/src/widgets";
 import Contacts from "@/src/widgets/sections/contacts/ui/Contacts";
 import CookieConsent from "@/src/widgets/cookieConsent/CookieConsent";
+import { YandexMetrikaScript } from "@/src/app/yandex";
 
 export default async function RootLayout({
   children,
@@ -23,6 +24,8 @@ export default async function RootLayout({
           </CartProvider>
         </QueryProvider>
         <CookieConsent />
+
+        <YandexMetrikaScript />
       </body>
     </html>
   );
