@@ -3,6 +3,7 @@ export type Category = {
   name: string;
   slug: string;
   // image: string;
+  description?: string;
 };
 
 export type CategoryGroup = {
@@ -11,4 +12,5 @@ export type CategoryGroup = {
   slug: string;
   image?: string;
   categories: Category[];
+  description?: string;
 };

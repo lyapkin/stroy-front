@@ -9,6 +9,7 @@ import { Suspense } from "react";
 import { FormSection } from "@/src/widgets/form";
 import Filters from "@/src/widgets/catalogFilters/ui/Filters";
 import MobileCategories from "@/src/widgets/catalogFilters/ui/MobileCategories";
+import CatalogDescription from "./CatalogDescription";
 
 const Catalog = async ({
   groupSlug,
@@ -57,6 +58,10 @@ const Catalog = async ({
                 categorySlug={categorySlug}
               />
             </div>
+            <CatalogDescription
+              groupSlug={groupSlug}
+              categorySlug={categorySlug}
+            />
           </main>
         </div>
       </div>
