@@ -24,7 +24,9 @@ const CommercialForm = () => {
     body.set("name", data.name);
     body.set("phone", data.phone);
     body.set("comment", data.comment);
-    body.set("file", data.file[0], data.file[0].name);
+    if (data.file.length !== 0) {
+      body.set("file", data.file[0], data.file[0].name);
+    }
 
     const url = new URL(
       "requests/commercial/",
@@ -57,12 +59,14 @@ const CommercialForm = () => {
   };
 
   const validateFile = (fileList: FileList) => {
+    // if (fileList.length === 0) {
+    //   return "Поле обязательно для заполнения";
+    // }
     if (fileList.length === 0) {
-      return "Поле обязательно для заполнения";
+      return true;
     }
     const file = fileList[0];
     if (file.size > 10 * 1024 * 1024) {
-      console.log(file.size);
       return `Разме файла не должен превышать 10MB; Размер загружаемого файла ${(
         file.size /
         1024 /
@@ -114,7 +118,7 @@ const CommercialForm = () => {
       <div className={cn(s.commercialForm__field, s.commercialForm__full)}>
         <FileField
           {...register("file", {
-            required: "Поле обязательно для заполнения",
+            // required: "Поле обязательно для заполнения",
             validate: validateFile,
           })}
           placeholder="Прикрепите свой чертеж"
