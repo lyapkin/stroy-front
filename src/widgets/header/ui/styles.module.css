@@ -7,9 +7,9 @@
 .header {
   display: grid;
   grid-template-areas:
-    "nav nav nav nav nav nav"
-    "search social email email tel cart";
-  grid-template-columns: 0.67fr 0.33fr 100px 0.48fr 0.48fr 0.12fr;
+    "nav nav nav nav nav"
+    "search social email phones cart";
+  grid-template-columns: 0.56fr 0.24fr 0.56fr auto 0.12fr;
   grid-template-rows: 64px 40px;
   row-gap: 16px;
   align-items: center;
@@ -57,13 +57,24 @@
 
 .header__email {
   grid-area: email;
-  justify-self: end;
+  justify-self: center;
 }
 
-.header__tel {
+.header__phones {
+  grid-area: phones;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  gap: 24px;
+}
+/* .header__tel {
   grid-area: tel;
   justify-self: center;
 }
+.header__tel2 {
+  grid-area: tel2;
+  justify-self: center;
+} */
 
 .header__cart {
   grid-area: cart;
@@ -154,7 +165,8 @@
 }
 
 .header__email,
-.header__tel {
+.header__tel,
+.header__tel2 {
   display: flex;
   gap: 16px;
   align-items: center;
@@ -298,7 +310,8 @@
 }
 
 .blur .header__email,
-.blur .header__tel {
+.blur .header__tel,
+.blur .header__tel2 {
   color: #fff;
 }
 
@@ -306,26 +319,12 @@
   color: #fff;
 }
 
-@media only screen and (max-width: 1340px) {
-  /* .header {
-    grid-template-columns: 0.67fr 0.33fr 230px 0.61fr 0.27fr 0.12fr;
-  }
-  .header__catalogButton {
-    padding-left: 0;
-    justify-content: center;
-    gap: 16px;
-  }
-  .header__search {
-    padding: 0 24px;
-  }
-  .header__tel span:last-child {
-    display: none;
-  } */
+@media only screen and (max-width: 1460px) {
   .header {
-    grid-template-columns: 0.36fr 0.18fr 0.4fr 0.4fr 0.12fr;
+    grid-template-columns: 0.36fr 0.18fr 0.4fr 190px 0.12fr;
     grid-template-areas:
       "nav nav nav nav nav"
-      "search social email tel cart";
+      "search social email phones cart";
     grid-template-rows: 64px 40px;
   }
   .header__catalogButton {
@@ -341,14 +340,19 @@
     /* padding: 8px; */
   }
   .header__email,
-  .header__tel {
+  .header__tel,
+  .header__tel2 {
     font-size: 18px;
+  }
+  .header__tel2 {
+    position: absolute;
+    top: 170%;
   }
 }
 
 @media only screen and (max-width: 1160px) {
   .header {
-    grid-template-columns: 0.38fr 0.17fr 0.36fr 0.08fr 0.12fr;
+    grid-template-columns: 0.56fr 0.16fr 0.1fr 0.08fr 0.1fr;
   }
   .header__catalogButton {
     gap: 8px;
@@ -357,8 +361,14 @@
     padding: 0 16px;
   }
 
-  .header__tel span:last-child {
+  .header__email span:last-child,
+  .header__tel span:last-child,
+  .header__tel2 span:last-child {
     display: none;
+  }
+  .header__tel2 {
+    position: static;
+    top: none;
   }
 }
 
@@ -399,7 +409,7 @@
     grid-template-columns: 1fr 1fr 0.7fr 0.3fr;
     grid-template-rows: 64px 56px;
     grid-template-areas:
-      "mobile logo social tel"
+      "mobile logo social phones"
       "nav nav nav nav";
     gap: 0;
   }
@@ -410,7 +420,7 @@
     display: none;
   }
 
-  .header__tel {
+  .header__phones {
     justify-self: end;
     padding-right: 5vw;
   }
@@ -439,7 +449,7 @@
 
   .header__social {
     gap: 24px;
-    justify-self: end;
+    /* justify-self: end; */
   }
   .header__social > a {
     aspect-ratio: auto;
@@ -570,11 +580,15 @@
   .header {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
-      "mobile logo tel"
+      "mobile logo phones"
       "nav nav nav";
   }
   .header__social {
     display: none;
+  }
+  .header__phones {
+    justify-content: flex-end;
+    gap: 24px;
   }
 
   .header__navList .header__navItem:nth-child(6) {

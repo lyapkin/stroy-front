@@ -58,7 +58,15 @@ const Header = async () => {
               <WhatsappLink link={contacts.wa} />
             </div>
             <Email email={contacts.email} className={s.header__email} />
-            <PhoneNumber number={contacts.phone} className={s.header__tel} />
+            <div className={s.header__phones}>
+              <PhoneNumber number={contacts.phone} className={s.header__tel} />
+              {contacts.phone2 && (
+                <PhoneNumber
+                  number={contacts.phone2}
+                  className={s.header__tel2}
+                />
+              )}
+            </div>
             <div className={s.header__cart}>
               <CartLink />
             </div>

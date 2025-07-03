@@ -71,6 +71,12 @@ const MobileMenu = ({ className, contacts }: MobileMenuProps) => {
           </div>
           <Email email={contacts.email} className={s.mobileMenu__email} />
           <PhoneNumber number={contacts.phone} className={s.mobileMenu__tel} />
+          {contacts.phone2 && (
+            <PhoneNumber
+              number={contacts.phone2}
+              className={s.mobileMenu__tel}
+            />
+          )}
           <div className={s.mobileMenu__cart}>
             <CartLink />
           </div>

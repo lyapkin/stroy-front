@@ -13,6 +13,12 @@ const FooterContacts = async () => {
       <div className={s.footer__contacts}>
         <p className={s.footer__title}>Контакты</p>
         <PhoneNumber number={contacts.phone} className={s.footer__mainNumber} />
+        {contacts.phone2 && (
+          <PhoneNumber
+            number={contacts.phone2}
+            className={s.footer__mainNumber}
+          />
+        )}
         <List
           className={s.footer__telList}
           data={contacts.phones}
