@@ -1,13 +1,18 @@
 import { backFetch } from "@/src/shared/api";
 import { ProductDetail, ProductRemainder } from "./model/types";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 
 export const getProductDetailApi = async (
   slug: string
 ): Promise<ProductDetail> => {
-  const res = await backFetch(`catalog/products/${slug}/`);
+  const res = await backFetch(`catalog/products/${slug}/`, {
+    redirect: "manual",
+  });
   if (res.status === 404) {
     notFound();
+  }
+  if (res.status === 301) {
+    permanentRedirect(`/product${res.headers.get("Location")}`);
   }
   return res.json();
 };
