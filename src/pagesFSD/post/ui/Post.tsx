@@ -1,7 +1,7 @@
 import { PostContent } from "@/src/entities/blog/model/types";
 import s from "./styles.module.css";
 import cn from "classnames";
-import "./ck.css";
+import "@/src/shared/styles/ck.css";
 
 const Post = ({ post }: PostProps) => {
   return (

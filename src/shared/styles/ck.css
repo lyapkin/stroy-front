@@ -111,6 +111,10 @@ img.image_resized {
   margin-right: 8px;
 } */
 
+.ck a {
+  text-decoration: underline;
+}
+
 @media only screen and (max-width: 900px) {
   .ck h2 {
     font-size: 22px;

@@ -1,6 +1,6 @@
 import { ProductDetailDescriptionProps } from "../types";
 import s from "./styles.module.css";
-import "@/src/app/styles/ck.css";
+import "@/src/shared/styles/ck.css";
 import cn from "classnames";
 
 const ProductDetailDescription = ({
