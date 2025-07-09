@@ -13,7 +13,7 @@ const Agreement = async () => {
         "@type": "ListItem",
         position: 1,
         name: "Пользовательское соглашение",
-        item: `${process.env.SITE_URL}/agreement/`,
+        item: `${process.env.NEXT_PUBLIC_SITE_URL}/agreement/#`,
       },
     ],
   };

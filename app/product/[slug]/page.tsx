@@ -35,19 +35,19 @@ const ProductPage = async ({
         "@type": "ListItem",
         position: 1,
         name: "Каталог",
-        item: `${process.env.BACK_URL}/catalog/`,
+        item: `${process.env.NEXT_PUBLIC_SITE_URL}/catalog/`,
       },
       // {
       //   "@type": "ListItem",
       //   position: 2,
       //   name: product.,
-      //   item: `${process.env.BACK_URL}/catalog/${product.categories[0].slug}/`,
+      //   item: `${process.env.NEXT_PUBLIC_SITE_URL}/catalog/${product.categories[0].slug}/`,
       // },
       {
         "@type": "ListItem",
         position: 2,
         name: product.name,
-        item: `${process.env.BACK_URL}/product/${slug}/`,
+        item: `${process.env.NEXT_PUBLIC_SITE_URL}/product/${slug}/#`,
       },
     ],
   };

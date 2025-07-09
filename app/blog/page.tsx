@@ -14,7 +14,7 @@ const BlogPage = async () => {
         "@type": "ListItem",
         position: 1,
         name: "Блог",
-        item: `${process.env.SITE_URL}/blog/`,
+        item: `${process.env.NEXT_PUBLIC_SITE_URL}/blog/#`,
       },
     ],
   };

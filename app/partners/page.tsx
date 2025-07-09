@@ -19,7 +19,7 @@ const Partners = async () => {
         "@type": "ListItem",
         position: 1,
         name: "Партнерам",
-        item: `${process.env.SITE_URL}/partners/`,
+        item: `${process.env.NEXT_PUBLIC_SITE_URL}/partners/#`,
       },
     ],
   };

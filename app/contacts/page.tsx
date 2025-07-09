@@ -14,7 +14,7 @@ const ContactsPage = async () => {
         "@type": "ListItem",
         position: 1,
         name: "Контакты",
-        item: `${process.env.SITE_URL}/contacts/`,
+        item: `${process.env.NEXT_PUBLIC_SITE_URL}/contacts/#`,
       },
     ],
   };

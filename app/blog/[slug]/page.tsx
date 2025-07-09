@@ -16,13 +16,13 @@ const PostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
         "@type": "ListItem",
         position: 1,
         name: "Блог",
-        item: `${process.env.SITE_URL}/blog/`,
+        item: `${process.env.NEXT_PUBLIC_SITE_URL}/blog/`,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: post.name,
-        item: `${process.env.SITE_URL}/blog/${slug}/`,
+        item: `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${slug}/#`,
       },
     ],
   };

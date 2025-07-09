@@ -14,7 +14,7 @@ const FaqPage = async () => {
         "@type": "ListItem",
         position: 1,
         name: "FAQ",
-        item: `${process.env.SITE_URL}/faq/`,
+        item: `${process.env.NEXT_PUBLIC_SITE_URL}/faq/#`,
       },
     ],
   };

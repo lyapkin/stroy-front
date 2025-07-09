@@ -14,7 +14,7 @@ const Privacy = async () => {
         "@type": "ListItem",
         position: 1,
         name: "Политика конфиденциальности",
-        item: `${process.env.SITE_URL}/privacy/`,
+        item: `${process.env.NEXT_PUBLIC_SITE_URL}/privacy/#`,
       },
     ],
   };

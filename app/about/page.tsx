@@ -14,7 +14,7 @@ const AboutPage = async () => {
         "@type": "ListItem",
         position: 1,
         name: "О компании",
-        item: `${process.env.SITE_URL}/about/`,
+        item: `${process.env.NEXT_PUBLIC_SITE_URL}/about/#`,
       },
     ],
   };

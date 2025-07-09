@@ -21,19 +21,19 @@ const CatalogPage = async ({
         "@type": "ListItem",
         position: 1,
         name: "Каталог",
-        item: `${process.env.SITE_URL}/catalog/`,
+        item: `${process.env.NEXT_PUBLIC_SITE_URL}/catalog/`,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: group?.name || "",
-        item: `${process.env.SITE_URL}/catalog/${groupSlug}/`,
+        item: `${process.env.NEXT_PUBLIC_SITE_URL}/catalog/${groupSlug}/`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: category.name,
-        item: `${process.env.SITE_URL}/catalog/${groupSlug}/${categorySlug}/`,
+        item: `${process.env.NEXT_PUBLIC_SITE_URL}/catalog/${groupSlug}/${categorySlug}/#`,
       },
     ],
   };
