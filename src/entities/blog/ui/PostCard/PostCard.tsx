@@ -14,9 +14,9 @@ const PostCard = ({ post }: PostCardProps) => {
           style={{ objectFit: "cover" }}
         />
       </Link>
-      <p className={s.card__title}>
+      <h3 className={s.card__title}>
         <Link href={`/blog/${post.slug}/`}>{post.name}</Link>
-      </p>
+      </h3>
       <p className={s.card__excerpt}>{post.excerpt}</p>
       <Link href={`/blog/${post.slug}/`} className={s.card__link}>
         Читать подробнее

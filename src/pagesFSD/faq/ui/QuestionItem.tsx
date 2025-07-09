@@ -6,7 +6,7 @@ import { Faq } from "../types";
 const QuestionItem = ({ faq }: QuestionItemProps) => {
   return (
     <Expender
-      header={<span className={s.item__title}>{faq.question}</span>}
+      header={<h3 className={s.item__title}>{faq.question}</h3>}
       indicator={<ArrowDownIcon />}
       isOpenDefault={false}
       className={s.item}

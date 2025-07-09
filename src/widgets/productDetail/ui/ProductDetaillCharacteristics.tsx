@@ -18,7 +18,7 @@ const ProductDetaillCharacteristics = ({
 
   return (
     <div className={s.characteristics}>
-      <p className={cn(s.characteristics__title, s.title)}>Характеристики</p>
+      <h2 className={cn(s.characteristics__title, s.title)}>Характеристики</h2>
       <ul className={s.characteristics__list}>
         <li className={s.characteristics__item}>
           <span className={s.characteristics__name}>Наличие</span>

@@ -16,9 +16,9 @@ const ProductPrice = ({ productPrice }: ProductPriceProps) => {
     <div className={s.productDetail__control}>
       {productPrice.length > 1 && (
         <div className={s.productDetail__pricelist}>
-          <p className={cn(s.pricelist__title, s.title)}>
+          <h2 className={cn(s.pricelist__title, s.title)}>
             Разновидности товара
-          </p>
+          </h2>
           <List
             className={s.pricelist}
             itemClassName={(i) =>

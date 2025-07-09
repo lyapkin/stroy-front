@@ -8,7 +8,7 @@ const ProductDetailDescription = ({
 }: ProductDetailDescriptionProps) => {
   return (
     <div className={s.description}>
-      <p className={cn(s.description__title, s.title)}>Описание</p>
+      <h3 className={cn(s.description__title, s.title)}>Описание</h3>
       <div
         className={cn(s.description__content, "ck")}
         dangerouslySetInnerHTML={{ __html: description }}

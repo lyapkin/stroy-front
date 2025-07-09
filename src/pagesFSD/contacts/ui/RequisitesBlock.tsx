@@ -4,7 +4,7 @@ import s from "./styles.module.css";
 const RequisitesBlock = ({ requisites }: RequisitesProps) => {
   return (
     <div className={s.contacts__requisites}>
-      <p className={s.requisites__title}>Реквизиты</p>
+      <h3 className={s.requisites__title}>Реквизиты</h3>
       <div className={s.requisites__block}>
         <span className={s.requisites__line}>{requisites.name}</span>
         {requisites.requisites.map((item) => {

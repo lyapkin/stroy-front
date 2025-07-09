@@ -6,7 +6,7 @@ import FooterList from "./FooterList";
 const FooterNav = () => {
   return (
     <div className={s.footer__nav}>
-      <FooterList title="Сайт">
+      <FooterList title="Карта сайта">
         <Nav className={s.footer__list}>
           <NavItem link={"/catalog/"} className={s.footer__listItem}>
             Каталог
