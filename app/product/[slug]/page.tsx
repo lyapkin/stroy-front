@@ -88,10 +88,40 @@ export const generateMetadata = async (
   const searchParamsData = await searchParams;
   const productDetail = await getProductDetailApi(slug);
 
-  return generateMetadataUtil(
+  const meta = generateMetadataUtil(
     parent,
     `product/${slug}/`,
     productDetail.metadata,
     searchParamsData
   );
+  return {
+    ...meta,
+    openGraph: {
+      title: "This is title",
+      description: " This is description",
+      type: "website",
+      url: "https://yourwebsite.com/blog", // e.g.: https://acme.com/blog
+      images: [
+        {
+          // image extension can be anything like jpg, png, webp, etc.
+          url: productDetail.images[0].url,
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+    twitter: {
+      title: "This is title",
+      description: "This is description",
+      card: "summary_large_image",
+      images: [
+        {
+          url: productDetail.images[0].url,
+          width: 1200,
+          height: 630,
+          type: "image/webp",
+        },
+      ],
+    },
+  };
 };
