@@ -97,10 +97,10 @@ export const generateMetadata = async (
   return {
     ...meta,
     openGraph: {
-      title: "This is title",
-      description: " This is description",
+      // title: "This is title",
+      // description: " This is description",
       type: "website",
-      url: "https://yourwebsite.com/blog", // e.g.: https://acme.com/blog
+      // url: "https://yourwebsite.com/blog",
       images: [
         {
           // image extension can be anything like jpg, png, webp, etc.
@@ -111,8 +111,8 @@ export const generateMetadata = async (
       ],
     },
     twitter: {
-      title: "This is title",
-      description: "This is description",
+      // title: productDetail.name,
+      // description: "This is description",
       card: "summary_large_image",
       images: [
         {
