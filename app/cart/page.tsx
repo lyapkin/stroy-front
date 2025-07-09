@@ -11,7 +11,7 @@ const CartPage = () => {
         "@type": "ListItem",
         position: 1,
         name: "Корзина",
-        item: `${process.env.SITE_URL}/cart/#`,
+        item: `${process.env.NEXT_PUBLIC_SITE_URL}/cart/#`,
       },
     ],
   };
