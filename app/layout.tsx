@@ -12,6 +12,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  console.log(process.env.NODE_ENV);
   return (
     <html lang="ru">
       <body className={helveticaNeue.variable}>
@@ -25,7 +26,7 @@ export default async function RootLayout({
         </QueryProvider>
         <CookieConsent />
 
-        <YandexMetrikaScript />
+        {process.env.NODE_ENV === "production" && <YandexMetrikaScript />}
       </body>
     </html>
   );
