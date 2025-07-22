@@ -6,7 +6,7 @@ import { Header, Footer } from "@/src/widgets";
 import Contacts from "@/src/widgets/sections/contacts/ui/Contacts";
 import CookieConsent from "@/src/widgets/cookieConsent/CookieConsent";
 import { YandexMetrikaScript } from "@/src/app/yandex";
-import CartLinkMobile from "@/src/entities/cart/ui/CartLink/CartLinkMobile";
+import CartLinkWidget from "@/src/entities/cart/ui/CartLink/CartLinkWidget";
 
 export default async function RootLayout({
   children,
@@ -22,7 +22,7 @@ export default async function RootLayout({
             {children}
             <Contacts />
             <Footer />
-            <CartLinkMobile />
+            <CartLinkWidget />
           </CartProvider>
         </QueryProvider>
         <CookieConsent />
