@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import s from "./styles.module.css";
 import Image from "next/image";
@@ -8,12 +9,17 @@ import Characteristics from "./Characteristics";
 import { ProductPreview } from "../../model/types";
 import { FC } from "react";
 import CustomLink from "@/src/shared/ui/CustomLink/CustomLink";
+import useYM from "@/src/shared/hooks/useYM";
 
 const ProductCard = ({ product, Action }: ProductCardProps) => {
+  const { reachGoal } = useYM(103148704);
+  const handleDetail = () => {
+    reachGoal("detail");
+  };
   return (
     <article className={s.card}>
       <div className={s.card__image}>
-        <Link href={`/product/${product.slug}/`}>
+        <Link href={`/product/${product.slug}/`} onClick={handleDetail}>
           <Discount discount={product.price.discount} />
           <Image
             src={product.image || "/images/noimage.jpg"}
@@ -25,7 +31,9 @@ const ProductCard = ({ product, Action }: ProductCardProps) => {
         </Link>
       </div>
       <p className={s.card__title}>
-        <Link href={`/product/${product.slug}/`}>{product.name}</Link>
+        <Link href={`/product/${product.slug}/`} onClick={handleDetail}>
+          {product.name}
+        </Link>
       </p>
       <div className={s.card__characteristics}>
         <Characteristics characteristics={product.attributes.slice(0, 3)} />
@@ -45,6 +53,7 @@ const ProductCard = ({ product, Action }: ProductCardProps) => {
           <CustomLink
             href={`/product/${product.slug}/`}
             style={{ width: "100%", height: "100%", fontSize: 13 }}
+            onClick={handleDetail}
           >
             Посмотреть
           </CustomLink>
