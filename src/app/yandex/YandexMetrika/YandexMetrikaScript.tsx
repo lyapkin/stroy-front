@@ -27,12 +27,30 @@ const YandexMetrikaScript = () => {
               accurateTrackBounce:true,
               webvisor:true
         });
+        ym(103542108, 'init', {
+              defer: true,
+              ssr:true,
+              webvisor:true,
+              clickmap:true,
+              ecommerce:"dataLayer",
+              accurateTrackBounce:true,
+              trackLinks:true
+        });
         `}
       </Script>
       <noscript>
         <div>
           <img
             src="https://mc.yandex.ru/watch/103148704"
+            style={{ position: "absolute", left: "-9999px" }}
+            alt=""
+          />
+        </div>
+      </noscript>
+      <noscript>
+        <div>
+          <img
+            src="https://mc.yandex.ru/watch/103542108"
             style={{ position: "absolute", left: "-9999px" }}
             alt=""
           />
