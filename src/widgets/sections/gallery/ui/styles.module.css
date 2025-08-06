@@ -13,6 +13,10 @@
   display: flex;
 }
 
+.gallery__filters {
+  display: none;
+}
+
 @media only screen and (max-width: 1200px) {
   .gallery__content {
     display: initial;
