@@ -6,11 +6,11 @@ import { ButtonProps } from "@/src/shared/ui/Button/types";
 import { useCart } from "@/src/app/providers/CartProvider/CartProvider";
 import CheckIcon from "@/src/shared/ui/icons/CheckIcon";
 import Spinner from "@/src/shared/ui/loading/spinners/Spinner";
-import useYM from "@/src/shared/hooks/useYM";
+// import useYM from "@/src/shared/hooks/useYM";
 
 const AddToCart = ({ itemId, ...rest }: AddToCartProps) => {
   const { cart, plusItem } = useCart();
-  const { reachGoal } = useYM(103148704);
+  // const { reachGoal } = useYM(103148704);
 
   if (!cart) {
     return (
@@ -28,7 +28,7 @@ const AddToCart = ({ itemId, ...rest }: AddToCartProps) => {
       onClick={
         !itemInCart
           ? () => {
-              reachGoal("add_to_cart");
+              // reachGoal("add_to_cart");
               plusItem(itemId);
             }
           : () => {}

@@ -9,12 +9,12 @@ import Characteristics from "./Characteristics";
 import { ProductPreview } from "../../model/types";
 import { FC } from "react";
 import CustomLink from "@/src/shared/ui/CustomLink/CustomLink";
-import useYM from "@/src/shared/hooks/useYM";
+// import useYM from "@/src/shared/hooks/useYM";
 
 const ProductCard = ({ product, Action }: ProductCardProps) => {
-  const { reachGoal } = useYM(103148704);
+  // const { reachGoal } = useYM(103148704);
   const handleDetail = () => {
-    reachGoal("detail");
+    // reachGoal("detail");
   };
   return (
     <article className={s.card}>

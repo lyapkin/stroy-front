@@ -8,35 +8,35 @@ export default function YandexMetrika() {
 
   useEffect(() => {
     const url = `${pathname}?${searchParams}`;
-    ym(103148704, "hit", url);
+    // ym(103148704, "hit", url);
     ym(103542108, "hit", url);
   }, [pathname, searchParams]);
 
-  useEffect(() => {
-    const links = document.querySelectorAll("a");
-    links.forEach(function (link) {
-      if (link.href.includes("mailto:")) {
-        link.addEventListener("copy", function () {
-          dataLayer.push({
-            event: "copyMail",
-          });
-          ym(103148704, "reachGoal", "copyMail");
-        });
-      } else if (link.href.includes("tel:")) {
-        link.addEventListener("copy", function () {
-          dataLayer.push({
-            event: "copyTel",
-          });
-        });
-      }
-    });
-    document.addEventListener("copy", function (e) {
-      dataLayer.push({
-        event: "copyText",
-        text: window.getSelection ? window.getSelection().toString() : "",
-      });
-    });
-  }, []);
+  // useEffect(() => {
+  //   const links = document.querySelectorAll("a");
+  //   links.forEach(function (link) {
+  //     if (link.href.includes("mailto:")) {
+  //       link.addEventListener("copy", function () {
+  //         dataLayer.push({
+  //           event: "copyMail",
+  //         });
+  //         ym(103148704, "reachGoal", "copyMail");
+  //       });
+  //     } else if (link.href.includes("tel:")) {
+  //       link.addEventListener("copy", function () {
+  //         dataLayer.push({
+  //           event: "copyTel",
+  //         });
+  //       });
+  //     }
+  //   });
+  //   document.addEventListener("copy", function (e) {
+  //     dataLayer.push({
+  //       event: "copyText",
+  //       text: window.getSelection ? window.getSelection().toString() : "",
+  //     });
+  //   });
+  // }, []);
 
   return null;
 }

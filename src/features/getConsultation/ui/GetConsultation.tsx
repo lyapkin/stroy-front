@@ -8,7 +8,7 @@ import getCookie from "@/src/shared/utils";
 import FieldError from "@/src/shared/ui/form/FieldError";
 import SubmitButton from "@/src/shared/ui/form/SubmitButton";
 import Agreement from "@/src/shared/ui/form/Agreement";
-import useYM from "@/src/shared/hooks/useYM";
+// import useYM from "@/src/shared/hooks/useYM";
 
 const GetConsultation = ({ className }: GetConsultationProps) => {
   const {
@@ -17,7 +17,7 @@ const GetConsultation = ({ className }: GetConsultationProps) => {
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<Form>({});
   // const changeSearchParams = useChangeSearchParams();
-  const { reachGoal } = useYM(103148704);
+  // const { reachGoal } = useYM(103148704);
 
   const submitHandler: SubmitHandler<Form> = async (data) => {
     const url = new URL(
@@ -41,7 +41,7 @@ const GetConsultation = ({ className }: GetConsultationProps) => {
     }
     // const usp = new URLSearchParams({ orderd: "success" });
     // changeSearchParams(usp);
-    reachGoal("forms_consultation");
+    // reachGoal("forms_consultation");
   };
   return (
     <form

@@ -10,7 +10,7 @@ import cn from "classnames";
 import getCookie from "@/src/shared/utils";
 import SubmitButton from "@/src/shared/ui/form/SubmitButton";
 import Agreement from "@/src/shared/ui/form/Agreement";
-import useYM from "@/src/shared/hooks/useYM";
+// import useYM from "@/src/shared/hooks/useYM";
 
 const CommercialForm = () => {
   const {
@@ -19,7 +19,7 @@ const CommercialForm = () => {
     setError,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<Form>({});
-  const { reachGoal } = useYM(103148704);
+  // const { reachGoal } = useYM(103148704);
 
   const submitHandler: SubmitHandler<Form> = async (data) => {
     const body = new FormData();
@@ -58,7 +58,7 @@ const CommercialForm = () => {
       const error = await res.json();
       console.log(error);
     }
-    reachGoal("forms_kp");
+    // reachGoal("forms_kp");
   };
 
   const validateFile = (fileList: FileList) => {
