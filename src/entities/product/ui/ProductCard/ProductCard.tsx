@@ -9,6 +9,7 @@ import Characteristics from "./Characteristics";
 import { ProductPreview } from "../../model/types";
 import { FC } from "react";
 import CustomLink from "@/src/shared/ui/CustomLink/CustomLink";
+import { BestPrice } from "../BestPrice";
 // import useYM from "@/src/shared/hooks/useYM";
 
 const ProductCard = ({ product, Action }: ProductCardProps) => {
@@ -28,6 +29,7 @@ const ProductCard = ({ product, Action }: ProductCardProps) => {
             alt={product.name}
           />
           <Stock stock={product.stock} />
+          <BestPrice best={product.best_price} className={s.card__best} />
         </Link>
       </div>
       <p className={s.card__title}>

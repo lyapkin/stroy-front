@@ -18,6 +18,14 @@
 
 .productDetail__images {
   grid-area: images;
+  position: relative;
+}
+.productDetail__best {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 16px 32px;
+  font-size: 13px;
 }
 
 .productDetail__control {

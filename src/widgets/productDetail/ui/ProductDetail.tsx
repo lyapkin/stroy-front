@@ -8,6 +8,7 @@ import cn from "classnames";
 import InfoPlugin from "./InfoPlugin";
 import GetConsultationPopup from "@/src/features/getConsultation/ui/GetConsultationPopup";
 import ProductPrice from "./ProductPrice";
+import { BestPrice } from "@/src/entities/product";
 
 const ProductDetail = ({ product }: ProductDetailProps) => {
   return (
@@ -23,6 +24,10 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
               : [{ id: 0, url: "/images/noimage.jpg" }]
           }
           alt={product.name}
+        />
+        <BestPrice
+          best={product.best_price}
+          className={s.productDetail__best}
         />
       </div>
       <div className={s.productDetail__characteristics}>

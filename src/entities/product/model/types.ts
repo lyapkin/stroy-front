@@ -29,6 +29,7 @@ export type ProductBase = {
   slug: string;
   name: string;
   stock: boolean;
+  best_price: boolean;
   attributes: Characteristic[];
 };
 
