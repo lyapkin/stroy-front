@@ -6,8 +6,8 @@ import List from "@/src/shared/ui/List/List";
 import s from "./styles.module.css";
 import { useSearchParams } from "next/navigation";
 import { ChangeEvent } from "react";
-import useChangeSearchParams from "@/src/shared/hooks/useChangeSearchParams";
-import useIsInteractive from "@/src/shared/hooks/useIsInteractive";
+import useChangeSearchParams from "@/src/shared/utils/client/useChangeSearchParams";
+import useIsInteractive from "@/src/shared/utils/client/useIsInteractive";
 
 const Filter = ({ data, type, title, multiple = false }: FilterProps) => {
   const searchParams = useSearchParams();

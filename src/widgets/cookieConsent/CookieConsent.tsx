@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import s from "./styles.module.css";
-import getCookie from "@/src/shared/utils";
+import { getCookie } from "@/src/shared/utils";
 import Button from "@/src/shared/ui/Button/Button";
 
 const CookieConsent = () => {

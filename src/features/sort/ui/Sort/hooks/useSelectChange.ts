@@ -1,4 +1,4 @@
-import useChangeSearchParams from "@/src/shared/hooks/useChangeSearchParams";
+import useChangeSearchParams from "@/src/shared/utils/client/useChangeSearchParams";
 import { sortOptions } from "../data";
 import { useSearchParams } from "next/navigation";
 

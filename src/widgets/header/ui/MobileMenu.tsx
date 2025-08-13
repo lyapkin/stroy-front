@@ -11,7 +11,7 @@ import Nav from "@/src/shared/ui/Nav/Nav";
 import NavItem from "@/src/shared/ui/Nav/NavItem";
 import TelegramLink from "@/src/shared/ui/socialLinks/TelegramLink";
 import WhatsappLink from "@/src/shared/ui/socialLinks/WhatsappLink";
-import useCloseByClickOutside from "@/src/shared/hooks/useCloseByClickOutside";
+import useCloseByClickOutside from "@/src/shared/utils/client/useCloseByClickOutside";
 import { CartLink } from "@/src/entities/cart";
 
 const MobileMenu = ({ className, contacts }: MobileMenuProps) => {

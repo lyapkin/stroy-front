@@ -1,5 +1,5 @@
 "use client";
-import useWindowWidth from "@/src/shared/hooks/useWindowWidth";
+import useWindowWidth from "@/src/shared/utils/client/useWindowWidth";
 import s from "./styles.module.css";
 import CatalogLoading from "./CatalogLoading";
 import CatalogSlider from "./CatalogSlider";

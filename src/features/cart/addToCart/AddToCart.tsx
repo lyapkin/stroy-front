@@ -6,7 +6,7 @@ import { ButtonProps } from "@/src/shared/ui/Button/types";
 import { useCart } from "@/src/app/providers/CartProvider/CartProvider";
 import CheckIcon from "@/src/shared/ui/icons/CheckIcon";
 import Spinner from "@/src/shared/ui/loading/spinners/Spinner";
-// import useYM from "@/src/shared/hooks/useYM";
+// import useYM from "@/src/shared/utils/client/useYM";
 
 const AddToCart = ({ itemId, ...rest }: AddToCartProps) => {
   const { cart, plusItem } = useCart();

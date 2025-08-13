@@ -10,7 +10,7 @@ import { ProductPreview } from "../../model/types";
 import { FC } from "react";
 import CustomLink from "@/src/shared/ui/CustomLink/CustomLink";
 import { BestPrice } from "../BestPrice";
-// import useYM from "@/src/shared/hooks/useYM";
+// import useYM from "@/src/shared/utils/client/useYM";
 
 const ProductCard = ({ product, Action }: ProductCardProps) => {
   // const { reachGoal } = useYM(103148704);

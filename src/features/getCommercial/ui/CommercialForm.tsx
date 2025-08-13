@@ -7,10 +7,10 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import InputField from "@/src/shared/ui/form/InputField";
 import FieldError from "@/src/shared/ui/form/FieldError";
 import cn from "classnames";
-import getCookie from "@/src/shared/utils";
+import { Utm, getCookie } from "@/src/shared/utils";
 import SubmitButton from "@/src/shared/ui/form/SubmitButton";
 import Agreement from "@/src/shared/ui/form/Agreement";
-// import useYM from "@/src/shared/hooks/useYM";
+import { useSucceedFromRequest } from "@/src/shared/utils/client";
 
 const CommercialForm = () => {
   const {
@@ -19,7 +19,7 @@ const CommercialForm = () => {
     setError,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<Form>({});
-  // const { reachGoal } = useYM(103148704);
+  const succedRequest = useSucceedFromRequest();
 
   const submitHandler: SubmitHandler<Form> = async (data) => {
     const body = new FormData();
@@ -29,6 +29,11 @@ const CommercialForm = () => {
     if (data.file.length !== 0) {
       body.set("file", data.file[0], data.file[0].name);
     }
+
+    const addition = Utm.getUtm().reduce((result, item) => {
+      return (result += `${item[0]}: ${item[1]}\n`);
+    }, "");
+    body.set("addition", addition);
 
     const url = new URL(
       "requests/commercial/",
@@ -58,7 +63,8 @@ const CommercialForm = () => {
       const error = await res.json();
       console.log(error);
     }
-    // reachGoal("forms_kp");
+
+    succedRequest();
   };
 
   const validateFile = (fileList: FileList) => {

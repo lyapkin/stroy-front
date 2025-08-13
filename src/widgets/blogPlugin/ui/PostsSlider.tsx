@@ -2,7 +2,7 @@ import { PostPreview } from "@/src/entities/blog/model/types";
 import s from "./styles.module.css";
 import BaseSlider from "../../../shared/ui/slider/ui/BaseSlider";
 import BlogSkeleton from "./BlogSkeleton";
-import useWindowWidth from "@/src/shared/hooks/useWindowWidth";
+import useWindowWidth from "@/src/shared/utils/client/useWindowWidth";
 import { useState, useRef, useEffect } from "react";
 import Slider from "react-slick";
 import { PostCard } from "@/src/entities/blog";

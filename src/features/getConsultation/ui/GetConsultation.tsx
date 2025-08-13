@@ -4,11 +4,11 @@ import s from "./styles.module.css";
 import cn from "classnames";
 import InputField from "@/src/shared/ui/form/InputField";
 import { SubmitHandler, useForm } from "react-hook-form";
-import getCookie from "@/src/shared/utils";
+import { Utm, getCookie } from "@/src/shared/utils";
 import FieldError from "@/src/shared/ui/form/FieldError";
 import SubmitButton from "@/src/shared/ui/form/SubmitButton";
 import Agreement from "@/src/shared/ui/form/Agreement";
-// import useYM from "@/src/shared/hooks/useYM";
+import { useSucceedFromRequest } from "@/src/shared/utils/client";
 
 const GetConsultation = ({ className }: GetConsultationProps) => {
   const {
@@ -16,8 +16,8 @@ const GetConsultation = ({ className }: GetConsultationProps) => {
     handleSubmit,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<Form>({});
-  // const changeSearchParams = useChangeSearchParams();
-  // const { reachGoal } = useYM(103148704);
+
+  const succedRequest = useSucceedFromRequest();
 
   const submitHandler: SubmitHandler<Form> = async (data) => {
     const url = new URL(
@@ -25,13 +25,17 @@ const GetConsultation = ({ className }: GetConsultationProps) => {
       process.env.NEXT_PUBLIC_API_BASE_URL
     );
 
+    const addition = Utm.getUtm().reduce((result, item) => {
+      return (result += `${item[0]}: ${item[1]}\n`);
+    }, "");
+
     const res = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "X-CSRFToken": getCookie("csrftoken"),
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({ ...data, addition }),
     });
 
     if (res.status !== 201) {
@@ -39,9 +43,7 @@ const GetConsultation = ({ className }: GetConsultationProps) => {
       console.log(error);
       return;
     }
-    // const usp = new URLSearchParams({ orderd: "success" });
-    // changeSearchParams(usp);
-    // reachGoal("forms_consultation");
+    succedRequest();
   };
   return (
     <form

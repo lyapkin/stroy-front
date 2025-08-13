@@ -3,7 +3,7 @@ import s from "./styles.module.css";
 import useToggle from "./hooks/useToggle";
 import useSelectChange from "./hooks/useSelectChange";
 import ArrowFilledIcon from "@/src/shared/ui/icons/ArrowFilledIcon";
-import useIsInteractive from "@/src/shared/hooks/useIsInteractive";
+import useIsInteractive from "@/src/shared/utils/client/useIsInteractive";
 
 const SortSelect = () => {
   const isInterctive = useIsInteractive();

@@ -1,5 +1,5 @@
 "use client";
-import useWindowWidth from "@/src/shared/hooks/useWindowWidth";
+import useWindowWidth from "@/src/shared/utils/client/useWindowWidth";
 import BaseSlider from "@/src/shared/ui/slider/ui/BaseSlider";
 import { useState, useRef, useEffect, JSX } from "react";
 import Slider from "react-slick";

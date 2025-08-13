@@ -1,4 +1,4 @@
-import useWindowWidth from "@/src/shared/hooks/useWindowWidth";
+import useWindowWidth from "@/src/shared/utils/client/useWindowWidth";
 import { useEffect, useState } from "react";
 
 export const useExtendable = () => {

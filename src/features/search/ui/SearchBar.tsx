@@ -3,8 +3,8 @@ import cn from "classnames";
 import SearchIcon from "./icons/SearchIcon";
 import s from "./styles.module.css";
 import { SearchBarProps } from "./types";
-import useChangeSearchParams from "@/src/shared/hooks/useChangeSearchParams";
-import useIsInteractive from "@/src/shared/hooks/useIsInteractive";
+import useChangeSearchParams from "@/src/shared/utils/client/useChangeSearchParams";
+import useIsInteractive from "@/src/shared/utils/client/useIsInteractive";
 import { useRouter, useSearchParams } from "next/navigation";
 
 const SearchBar = ({

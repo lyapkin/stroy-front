@@ -5,7 +5,7 @@ import cn from "classnames";
 import ContactBullet from "./ContactBullet";
 import dynamic from "next/dynamic";
 import { useState } from "react";
-import useWindowWidth from "@/src/shared/hooks/useWindowWidth";
+import useWindowWidth from "@/src/shared/utils/client/useWindowWidth";
 import MobileContactBullets from "./MobileContactBullets";
 
 const Map = dynamic(() => import("./Map"), { ssr: false });

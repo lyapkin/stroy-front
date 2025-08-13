@@ -4,7 +4,7 @@ import s from "./styles.module.css";
 import { useCategories } from "@/src/features";
 import { getGalleryApi } from "../api";
 import NoResultIcon from "@/src/shared/ui/icons/NoResultIcon";
-import useWindowWidth from "@/src/shared/hooks/useWindowWidth";
+import useWindowWidth from "@/src/shared/utils/client/useWindowWidth";
 import GalleryLoading from "./GalleryLoading";
 import GallerySlider from "./GallerySlider";
 

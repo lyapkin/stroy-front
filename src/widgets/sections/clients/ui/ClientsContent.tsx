@@ -1,6 +1,6 @@
 "use client";
 import s from "./styles.module.css";
-import useWindowWidth from "@/src/shared/hooks/useWindowWidth";
+import useWindowWidth from "@/src/shared/utils/client/useWindowWidth";
 import { JSX } from "react";
 import ClientsLoading from "./ClientsLoading";
 import ClientsSlider from "./ClientsSlider";

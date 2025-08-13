@@ -1,7 +1,7 @@
 import { JSX, useEffect, useRef, useState } from "react";
 import s from "./styles.module.css";
 import BaseSlider from "@/src/shared/ui/slider/ui/BaseSlider";
-import useWindowWidth from "@/src/shared/hooks/useWindowWidth";
+import useWindowWidth from "@/src/shared/utils/client/useWindowWidth";
 import Slider from "react-slick";
 
 const CatalogSlider = ({ slides }: CatalogSliderProps) => {

@@ -7,7 +7,7 @@ import {
   useState,
 } from "react";
 import s from "./styles.module.css";
-import useCloseByClickOutside from "@/src/shared/hooks/useCloseByClickOutside";
+import useCloseByClickOutside from "@/src/shared/utils/client/useCloseByClickOutside";
 import CloseIcon from "@/src/shared/ui/icons/CloseIcon";
 import FiltersToggle from "./FiltersToggle";
 import cn from "classnames";

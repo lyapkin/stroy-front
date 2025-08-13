@@ -2,7 +2,7 @@ import { useSearchParams } from "next/navigation";
 import s from "./styles.module.css";
 import { PageNumberProps } from "./types";
 import cn from "classnames";
-import useChangeSearchParams from "@/src/shared/hooks/useChangeSearchParams";
+import useChangeSearchParams from "@/src/shared/utils/client/useChangeSearchParams";
 
 const PageNumber = ({ page, disabled }: PageNumberProps) => {
   const searchParams = useSearchParams();

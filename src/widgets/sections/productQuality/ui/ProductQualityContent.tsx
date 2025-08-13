@@ -3,7 +3,7 @@ import s from "./styles.module.css";
 import { useRef, useState } from "react";
 import Slider from "react-slick";
 import BaseSlider from "@/src/shared/ui/slider/ui/BaseSlider";
-import useIsInteractive from "@/src/shared/hooks/useIsInteractive";
+import useIsInteractive from "@/src/shared/utils/client/useIsInteractive";
 import { Skeleton } from "@/src/shared/ui/loading";
 import ProductQualityDot from "./ProductQualityDot";
 import ProductQualityImage from "./ProductQualityImage";

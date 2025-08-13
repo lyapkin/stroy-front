@@ -3,7 +3,7 @@ import Image from "next/image";
 import s from "./styles.module.css";
 import BaseSlider from "@/src/shared/ui/slider/ui/BaseSlider";
 import { useEffect, useRef, useState } from "react";
-import useWindowWidth from "@/src/shared/hooks/useWindowWidth";
+import useWindowWidth from "@/src/shared/utils/client/useWindowWidth";
 import { Skeleton } from "@/src/shared/ui/loading";
 import Slider from "react-slick";
 import CertificatePopup from "./CertificatePopup";

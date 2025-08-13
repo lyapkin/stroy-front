@@ -1,4 +1,4 @@
-import useCloseByClickOutside from "@/src/shared/hooks/useCloseByClickOutside";
+import useCloseByClickOutside from "@/src/shared/utils/client/useCloseByClickOutside";
 import { useState } from "react";
 
 const useToggle = () => {

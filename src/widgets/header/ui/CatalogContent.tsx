@@ -7,7 +7,7 @@ import ArrowDownIcon from "@/src/shared/ui/icons/ArrowDownIcon";
 import { CategoryGroup } from "@/src/entities/category";
 import { useState } from "react";
 import cn from "classnames";
-import useWindowWidth from "@/src/shared/hooks/useWindowWidth";
+import useWindowWidth from "@/src/shared/utils/client/useWindowWidth";
 
 const CatalogContent = ({ data }: CatalogContentProps) => {
   const [isOpen, setIsOpen] = useState(false);

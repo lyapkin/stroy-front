@@ -6,10 +6,10 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import SubmitButton from "@/src/shared/ui/form/SubmitButton";
 import FieldError from "@/src/shared/ui/form/FieldError";
 import InputField from "@/src/shared/ui/form/InputField";
-import getCookie from "@/src/shared/utils";
+import { Utm, getCookie } from "@/src/shared/utils";
 import { useCart } from "@/src/app/providers/CartProvider/CartProvider";
-import useChangeSearchParams from "@/src/shared/hooks/useChangeSearchParams";
 import Agreement from "@/src/shared/ui/form/Agreement";
+import { useSucceedFromRequest } from "@/src/shared/utils/client";
 
 const SendOrder = ({ className }: SendOrderProps) => {
   const { cart, setCart } = useCart();
@@ -18,19 +18,26 @@ const SendOrder = ({ className }: SendOrderProps) => {
     handleSubmit,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<Form>({});
-  const changeSearchParams = useChangeSearchParams();
+  const succedRequest = useSucceedFromRequest();
 
   if (!cart) {
     return null;
   }
 
   const submitHandler: SubmitHandler<Form> = async (data) => {
-    const body: Form & { items: Record<"variant" | "quantity", number>[] } = {
+    const addition = Utm.getUtm().reduce((result, item) => {
+      return (result += `${item[0]}: ${item[1]}\n`);
+    }, "");
+    const body: Form & {
+      items: Record<"variant" | "quantity", number>[];
+      addition: string;
+    } = {
       ...data,
       items: Object.entries(cart).map((item) => ({
         variant: Number(item[0]),
         quantity: item[1],
       })),
+      addition,
     };
 
     const url = new URL(
@@ -53,8 +60,7 @@ const SendOrder = ({ className }: SendOrderProps) => {
       return;
     }
     setCart({});
-    const usp = new URLSearchParams({ ordered: "success" });
-    changeSearchParams(usp);
+    succedRequest();
   };
 
   return (
