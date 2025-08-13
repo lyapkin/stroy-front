@@ -45,3 +45,5 @@ dumpData/
 dump/
 
 .vscode/
+
+*_deprecated*
