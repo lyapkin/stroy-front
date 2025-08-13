@@ -6,11 +6,7 @@ import { createPortal } from "react-dom";
 import { motion } from "motion/react";
 import { PopupProps } from "./types";
 
-const Popup = ({
-  children,
-  close,
-}: // isCloseButtonDisplayed = true,
-PopupProps) => {
+const Popup = ({ children, close }: PopupProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
