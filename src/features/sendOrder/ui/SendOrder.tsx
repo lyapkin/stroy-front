@@ -9,7 +9,7 @@ import InputField from "@/src/shared/ui/form/InputField";
 import { Utm, getCookie } from "@/src/shared/utils";
 import { useCart } from "@/src/app/providers/CartProvider/CartProvider";
 import Agreement from "@/src/shared/ui/form/Agreement";
-import { useSucceedFromRequest } from "@/src/shared/utils/client";
+import { useSucceedFromRequest, useYM } from "@/src/shared/utils/client";
 
 const SendOrder = ({ className }: SendOrderProps) => {
   const { cart, setCart } = useCart();
@@ -19,6 +19,7 @@ const SendOrder = ({ className }: SendOrderProps) => {
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<Form>({});
   const succedRequest = useSucceedFromRequest();
+  const { reachGoal } = useYM(103542108);
 
   if (!cart) {
     return null;
@@ -61,6 +62,7 @@ const SendOrder = ({ className }: SendOrderProps) => {
     }
     setCart({});
     succedRequest();
+    reachGoal("forms_cart");
   };
 
   return (

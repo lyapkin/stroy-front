@@ -8,6 +8,7 @@ import GetConsultation from "./GetConsultation";
 const GetConsultationPopup = ({
   className,
   caption,
+  target,
 }: GetConsultationPopupProps) => {
   const [isFormShown, setIsFormShown] = useState(false);
 
@@ -33,7 +34,7 @@ const GetConsultationPopup = ({
               Оставьте ваши контактные данные и наш специалист свяжется с вами в
               течение 15 минут
             </p>
-            <GetConsultation />
+            <GetConsultation target={target} />
           </motion.div>
         </Popup>
       )}
@@ -47,6 +48,7 @@ const GetConsultationPopup = ({
 interface GetConsultationPopupProps {
   className: string;
   caption: string;
+  target?: string;
 }
 
 export default GetConsultationPopup;

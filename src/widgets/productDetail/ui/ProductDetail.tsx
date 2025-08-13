@@ -70,6 +70,7 @@ const pluginData = [
       <GetConsultationPopup
         className={s.plugin__action}
         caption={"Запросить рассчет"}
+        target="Zaprosit_raschet"
       />
     ),
   },

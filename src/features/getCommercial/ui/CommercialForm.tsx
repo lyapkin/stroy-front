@@ -10,7 +10,7 @@ import cn from "classnames";
 import { Utm, getCookie } from "@/src/shared/utils";
 import SubmitButton from "@/src/shared/ui/form/SubmitButton";
 import Agreement from "@/src/shared/ui/form/Agreement";
-import { useSucceedFromRequest } from "@/src/shared/utils/client";
+import { useSucceedFromRequest, useYM } from "@/src/shared/utils/client";
 
 const CommercialForm = () => {
   const {
@@ -20,6 +20,7 @@ const CommercialForm = () => {
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<Form>({});
   const succedRequest = useSucceedFromRequest();
+  const { reachGoal } = useYM(103542108);
 
   const submitHandler: SubmitHandler<Form> = async (data) => {
     const body = new FormData();
@@ -65,6 +66,7 @@ const CommercialForm = () => {
     }
 
     succedRequest();
+    reachGoal("forms_kp");
   };
 
   const validateFile = (fileList: FileList) => {

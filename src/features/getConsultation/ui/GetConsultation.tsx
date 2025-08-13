@@ -8,9 +8,9 @@ import { Utm, getCookie } from "@/src/shared/utils";
 import FieldError from "@/src/shared/ui/form/FieldError";
 import SubmitButton from "@/src/shared/ui/form/SubmitButton";
 import Agreement from "@/src/shared/ui/form/Agreement";
-import { useSucceedFromRequest } from "@/src/shared/utils/client";
+import { useSucceedFromRequest, useYM } from "@/src/shared/utils/client";
 
-const GetConsultation = ({ className }: GetConsultationProps) => {
+const GetConsultation = ({ className, target }: GetConsultationProps) => {
   const {
     register,
     handleSubmit,
@@ -18,6 +18,7 @@ const GetConsultation = ({ className }: GetConsultationProps) => {
   } = useForm<Form>({});
 
   const succedRequest = useSucceedFromRequest();
+  const { reachGoal } = useYM(103542108);
 
   const submitHandler: SubmitHandler<Form> = async (data) => {
     const url = new URL(
@@ -44,6 +45,7 @@ const GetConsultation = ({ className }: GetConsultationProps) => {
       return;
     }
     succedRequest();
+    reachGoal(target || "forms_consultation");
   };
   return (
     <form
@@ -102,6 +104,7 @@ const GetConsultation = ({ className }: GetConsultationProps) => {
 
 interface GetConsultationProps {
   className?: string;
+  target?: string;
 }
 
 type Form = {
