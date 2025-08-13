@@ -14,6 +14,15 @@ export default function YandexMetrika() {
 
   useEffect(() => {
     Utm.setUtm(searchParams);
+    const links = document.querySelectorAll("a");
+    links.forEach((link) => {
+      if (link.href.includes("mailto:")) {
+        link.addEventListener("copy", () => {
+          console.log("copyMail");
+          ym(103542108, "reachGoal", "copyMail");
+        });
+      }
+    });
   }, []);
 
   // useEffect(() => {
