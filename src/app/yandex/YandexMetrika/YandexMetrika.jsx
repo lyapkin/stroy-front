@@ -18,7 +18,6 @@ export default function YandexMetrika() {
     links.forEach((link) => {
       if (link.href.includes("mailto:")) {
         link.addEventListener("copy", () => {
-          console.log("copyMail");
           ym(103542108, "reachGoal", "copyMail");
         });
       }
