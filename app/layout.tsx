@@ -7,6 +7,8 @@ import Contacts from "@/src/widgets/sections/contacts/ui/Contacts";
 import CookieConsent from "@/src/widgets/cookieConsent/CookieConsent";
 import { YandexMetrikaScript } from "@/src/app/yandex";
 import CartLinkWidget from "@/src/entities/cart/ui/CartLink/CartLinkWidget";
+import { Suspense } from "react";
+import FormSuccess from "@/src/shared/ui/form/FormSuccess";
 
 export default async function RootLayout({
   children,
@@ -26,6 +28,9 @@ export default async function RootLayout({
           </CartProvider>
         </QueryProvider>
         <CookieConsent />
+        <Suspense>
+          <FormSuccess />
+        </Suspense>
 
         {process.env.NODE_ENV === "production" && <YandexMetrikaScript />}
       </body>
