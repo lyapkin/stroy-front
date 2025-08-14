@@ -13,6 +13,7 @@ export interface CatalogTitleProps {
 }
 
 export type Category = {
+  image?: string;
   parent: Category | null;
   slug: string;
   name: string;

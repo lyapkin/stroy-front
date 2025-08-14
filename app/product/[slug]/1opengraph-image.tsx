@@ -17,6 +17,7 @@ export default async function Image({
   const product = await getProductDetailApi(slug);
   const imageUrl =
     product.images.length > 0 ? product.images[0].url : "/images/logo-pic.png";
+  console.log("here", imageUrl);
   console.log(imageUrl);
 
   // const response = await fetch(process.env.BACK_URL + "/media/" + imageUrl);

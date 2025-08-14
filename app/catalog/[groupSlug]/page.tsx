@@ -62,10 +62,44 @@ export const generateMetadata = async (
   const searchParamsData = await searchParams;
   const group = await getCategoryApi("groups", groupSlug);
 
-  return generateMetadataUtil(
+  const meta = generateMetadataUtil(
     parent,
     `catalog/${groupSlug}/`,
     group.metadata,
     searchParamsData
   );
+  return {
+    ...meta,
+    openGraph: {
+      // title: "This is title",
+      // description: " This is description",
+      type: "website",
+      // url: "https://yourwebsite.com/blog",
+      images: [
+        {
+          // image extension can be anything like jpg, png, webp, etc.
+          url:
+            group.image ||
+            process.env.NEXT_PUBLIC_SITE_URL + "/images/logo-pic.png",
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+    twitter: {
+      // title: productDetail.name,
+      // description: "This is description",
+      card: "summary_large_image",
+      images: [
+        {
+          url:
+            group.image ||
+            process.env.NEXT_PUBLIC_SITE_URL + "/images/logo-pic.png",
+          width: 1200,
+          height: 630,
+          type: "image/webp",
+        },
+      ],
+    },
+  };
 };

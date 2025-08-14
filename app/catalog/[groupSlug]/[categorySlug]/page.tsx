@@ -73,10 +73,44 @@ export const generateMetadata = async (
   const searchParamsData = await searchParams;
   const category = await getCategoryApi("categories", categorySlug);
 
-  return generateMetadataUtil(
+  const meta = generateMetadataUtil(
     parent,
     `catalog/${groupSlug}/${categorySlug}/`,
     category.metadata,
     searchParamsData
   );
+  return {
+    ...meta,
+    openGraph: {
+      // title: "This is title",
+      // description: " This is description",
+      type: "website",
+      // url: "https://yourwebsite.com/blog",
+      images: [
+        {
+          // image extension can be anything like jpg, png, webp, etc.
+          url:
+            category.image ||
+            process.env.NEXT_PUBLIC_SITE_URL + "/images/logo-pic.png",
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+    twitter: {
+      // title: productDetail.name,
+      // description: "This is description",
+      card: "summary_large_image",
+      images: [
+        {
+          url:
+            category.image ||
+            process.env.NEXT_PUBLIC_SITE_URL + "/images/logo-pic.png",
+          width: 1200,
+          height: 630,
+          type: "image/webp",
+        },
+      ],
+    },
+  };
 };
