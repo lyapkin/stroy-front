@@ -2,8 +2,9 @@ import { backFetch } from "@/src/shared/api";
 import { Attribute } from "./types";
 
 export const getAttributesApi = async (
-  category: string
+  params: number[]
 ): Promise<Attribute[]> => {
-  const res = await backFetch(`catalog/attributes/${category}/`);
+  const usp = new URLSearchParams({ types: params.toString() });
+  const res = await backFetch(`catalog/attributes/?${usp.toString()}`);
   return res.json();
 };

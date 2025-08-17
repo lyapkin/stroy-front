@@ -14,20 +14,28 @@ const Filters = ({
   groupSlug,
   categorySlug,
 }: FiltersProps) => {
+  let categories: CategoryGroup["categories"] | undefined;
+  if (groupSlug) {
+    categories = groups.find((item) => item.slug === groupSlug)?.categories;
+  }
   return (
     <FiltersWrapper className={className}>
       <div className={s.filters}>
         <CategoryGroupFilter groupSlug={groupSlug} groups={groups} />
         {groupSlug && (
           <CategoryFilter
-            categories={
-              groups.find((item) => item.slug === groupSlug)?.categories
-            }
+            categories={categories}
             categorySlug={categorySlug}
             prefix={`/catalog/${groupSlug}/`}
           />
         )}
-        {categorySlug && <AttributesFilter category={categorySlug} />}
+        {categorySlug && categories && (
+          <AttributesFilter
+            types={
+              categories.find((item) => item.slug === categorySlug)?.types || []
+            }
+          />
+        )}
         <Suspense>
           <Filter
             title="Наличие"

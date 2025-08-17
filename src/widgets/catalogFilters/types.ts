@@ -7,6 +7,7 @@ type AttributeValue = {
 export type Attribute = {
   id: number;
   name: string;
+  unit: string;
   slug: string;
   values: AttributeValue[];
 };

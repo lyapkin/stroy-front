@@ -1,8 +1,8 @@
 import { getAttributesApi } from "../api";
 import Filter from "./Filter";
 
-const AttributesFilter = async ({ category }: AttributesFilterProps) => {
-  const attributes = await getAttributesApi(category);
+const AttributesFilter = async ({ types }: Props) => {
+  const attributes = await getAttributesApi(types);
 
   return (
     <>
@@ -11,6 +11,7 @@ const AttributesFilter = async ({ category }: AttributesFilterProps) => {
           <Filter
             key={item.id}
             data={item.values}
+            unit={item.unit}
             type={"attributes"}
             title={item.name}
             multiple={true}
@@ -21,8 +22,8 @@ const AttributesFilter = async ({ category }: AttributesFilterProps) => {
   );
 };
 
-interface AttributesFilterProps {
-  category: string;
+interface Props {
+  types: number[];
 }
 
 export default AttributesFilter;

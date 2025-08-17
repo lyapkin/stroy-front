@@ -11,7 +11,9 @@ const Characteristics = ({
     return (
       <li key={item.id} className={s.characteristics__item}>
         <span className={s.characteristics__name}>{item.attribute}</span>
-        <span className={s.characteristics__value}>{item.value}</span>
+        <span className={s.characteristics__value}>
+          {item.value} {item.unit}
+        </span>
       </li>
     );
   });

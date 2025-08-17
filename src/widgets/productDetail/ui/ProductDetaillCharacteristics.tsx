@@ -11,7 +11,9 @@ const ProductDetaillCharacteristics = ({
     return (
       <li className={s.characteristics__item} key={item.id}>
         <span className={s.characteristics__name}>{item.attribute}</span>
-        <span className={s.characteristics__value}>{item.value}</span>
+        <span className={s.characteristics__value}>
+          {item.value} {item.unit}
+        </span>
       </li>
     );
   });

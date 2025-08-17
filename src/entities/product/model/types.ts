@@ -8,6 +8,7 @@ type ProductImage = {
 type Characteristic = {
   id: number;
   attribute: string;
+  unit: string;
   value: string;
 };
 

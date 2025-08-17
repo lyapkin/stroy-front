@@ -4,6 +4,7 @@ export type Category = {
   slug: string;
   // image: string;
   description?: string;
+  types: number[];
 };
 
 export type CategoryGroup = {

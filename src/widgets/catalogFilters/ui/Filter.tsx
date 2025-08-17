@@ -9,7 +9,7 @@ import { ChangeEvent } from "react";
 import useChangeSearchParams from "@/src/shared/utils/client/useChangeSearchParams";
 import useIsInteractive from "@/src/shared/utils/client/useIsInteractive";
 
-const Filter = ({ data, type, title, multiple = false }: FilterProps) => {
+const Filter = ({ data, type, unit, title, multiple = false }: Props) => {
   const searchParams = useSearchParams();
   const current = searchParams.getAll(type);
   const changeSearchParams = useChangeSearchParams();
@@ -58,7 +58,7 @@ const Filter = ({ data, type, title, multiple = false }: FilterProps) => {
           <CheckboxInput
             name={type}
             onChange={handleChange}
-            label={item.name}
+            label={`${item.name}${unit ? " " + unit : ""}`}
             value={String(item.slug)}
             checked={current.includes(String(item.slug))}
             disabled={!isInteractive}
@@ -69,9 +69,10 @@ const Filter = ({ data, type, title, multiple = false }: FilterProps) => {
   );
 };
 
-interface FilterProps {
+interface Props {
   title: string;
   type: string;
+  unit?: string;
   multiple?: boolean;
   data: {
     id: number | string;
