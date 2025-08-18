@@ -12,6 +12,7 @@
   justify-content: space-between;
   max-height: 357px;
   width: 100%;
+  background-position: center;
 }
 
 .productionBullet__title {
