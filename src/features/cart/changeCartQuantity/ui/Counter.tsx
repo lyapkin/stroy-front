@@ -32,6 +32,7 @@ const Counter = ({ value, increment, decrement, setValue }: CounterProps) => {
         </button>
       </span>
       <input
+        inputMode="numeric"
         className={s.counter__count}
         value={count !== undefined ? count : "..."}
         disabled={value === undefined}
