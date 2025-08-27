@@ -2,16 +2,12 @@
 import {
   createContext,
   PropsWithChildren,
-  // useCallback,
   useContext,
   useEffect,
   useState,
 } from "react";
 import type { CartContext } from "./types";
-// import { isNumber } from "@/src/shared/utils";
-// import { productId } from "@/src/shared/types";
 import { ProductBase } from "@/src/entities/product";
-// import { getProductsExist } from "./api";
 import { useInit } from "./useInit";
 
 const CartContext = createContext({} as CartContext);
@@ -32,19 +28,6 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
       localStorage.removeItem("cart");
     }
   }, [cart]);
-
-  // const productsIdInCart =
-  //   cart &&
-  //   Object.keys(cart)
-  //     .filter((id) => isNumber(id))
-  //     .map((id) => Number(id));
-
-  // const cartQuantity =
-  //   cart && Object.values(cart).reduce((sum, q) => (sum += q), 0);
-
-  // const isProductInCart = (id: productId) => {
-  //   return cart && id in cart;
-  // };
 
   const plusItem = (id: ProductBase["id"]) => {
     setCart((prev) => {
@@ -74,6 +57,22 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
     });
   };
 
+  const setItemQuantity = (id: ProductBase["id"], count: number) => {
+    setCart((prev) => {
+      const newState = { ...prev };
+      if (id in newState && count > 0) {
+        newState[id] = count;
+      } else if (id in newState) {
+        return prev;
+      } else {
+        throw new Error(
+          "setItemQuantity can't be used if a product is not in the cart"
+        );
+      }
+      return newState;
+    });
+  };
+
   const removeItem = (id: ProductBase["id"]) => {
     setCart((prev) => {
       if (prev && id in prev) {
@@ -88,22 +87,15 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
     });
   };
 
-  // const cleanCart = useCallback(() => {
-  //   setCart({});
-  // }, []);
-
   return (
     <CartContext.Provider
       value={{
         cart,
-        // isProductInCart,
         plusItem,
         minusItem,
+        setItemQuantity,
         removeItem,
         setCart,
-        // cartQuantity,
-        // productsIdInCart,
-        // cleanCart,
       }}
     >
       {children}
