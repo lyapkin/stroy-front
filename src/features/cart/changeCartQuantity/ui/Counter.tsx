@@ -20,6 +20,13 @@ const Counter = ({ value, increment, decrement, setValue }: CounterProps) => {
     }
   };
 
+  const handleFocus = (e: React.FocusEvent<HTMLInputElement, Element>) => {
+    const len = e.target.value.length;
+    setTimeout(() => {
+      e.target.setSelectionRange(len, len);
+    }, 0);
+  };
+
   useEffect(() => {
     setCount(value);
   }, [value]);
@@ -38,6 +45,7 @@ const Counter = ({ value, increment, decrement, setValue }: CounterProps) => {
         disabled={value === undefined}
         onChange={handleChnage}
         onBlur={handleBlur}
+        onFocus={handleFocus}
       />
       <span className={s.counter__plus}>
         <button onClick={increment} disabled={!value}>
