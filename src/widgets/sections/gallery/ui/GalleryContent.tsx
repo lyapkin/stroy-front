@@ -39,10 +39,6 @@ const GalleryContent = () => {
     );
   });
 
-  if (width >= 1200) {
-    return <div className={s.gallery__content}>{content}</div>;
-  }
-
   return <GallerySlider slides={content} />;
 };
 

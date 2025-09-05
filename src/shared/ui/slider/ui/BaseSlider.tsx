@@ -32,12 +32,7 @@ const BaseSlider = ({
   return (
     <div className={s.baseSlider}>
       <Slider
-        className={cn(
-          className,
-          s.baseSlider__content,
-          "base-slider"
-          // slidesVisible === 1 ? "overflow" : ""
-        )}
+        className={cn(className, s.baseSlider__content, "base-slider")}
         {...settings}
         speed={settings.speed || 500}
         slidesToShow={slidesToShow}
@@ -51,22 +46,6 @@ const BaseSlider = ({
             beforeChangeCb(c, n);
           }
         }}
-        // appendDots={(dots) => {
-        //   return (
-        //     <div>
-        //       <ul className={s.baseSlider__dots}>{dots}</ul>
-        //     </div>
-        //   );
-        // }}
-        // customPaging={(i) => {
-        //   return (
-        //     <div
-        //       className={cn(s.dots__item, {
-        //         [s.dots__item_active]: i === sliderIndex,
-        //       })}
-        //     ></div>
-        //   );
-        // }}
       >
         {slides}
       </Slider>
