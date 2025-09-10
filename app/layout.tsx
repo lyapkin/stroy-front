@@ -9,6 +9,7 @@ import { YandexMetrikaScript } from "@/src/app/yandex";
 import CartLinkWidget from "@/src/entities/cart/ui/CartLink/CartLinkWidget";
 import { Suspense } from "react";
 import FormSuccess from "@/src/shared/ui/form/FormSuccess";
+import Script from "next/script";
 
 export default async function RootLayout({
   children,
@@ -33,6 +34,10 @@ export default async function RootLayout({
         </Suspense>
 
         {process.env.NODE_ENV === "production" && <YandexMetrikaScript />}
+        <Script
+          src="//cdn.callibri.ru/callibri.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
